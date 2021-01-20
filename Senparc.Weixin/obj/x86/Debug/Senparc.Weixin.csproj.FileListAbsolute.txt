@@ -1,0 +1,4 @@
+D:\Program\Gusu\GusuTest\Senparc.Weixin\bin\x86\Debug\Senparc.Weixin.dll
+D:\Program\Gusu\GusuTest\Senparc.Weixin\bin\x86\Debug\Senparc.Weixin.pdb
+D:\Program\Gusu\GusuTest\Senparc.Weixin\obj\x86\Debug\Senparc.Weixin.dll
+D:\Program\Gusu\GusuTest\Senparc.Weixin\obj\x86\Debug\Senparc.Weixin.pdb

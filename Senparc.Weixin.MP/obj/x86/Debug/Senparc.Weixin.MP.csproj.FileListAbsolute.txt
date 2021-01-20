@@ -1,0 +1,7 @@
+D:\Program\Gusu\GusuTest\Senparc.Weixin.MP\bin\x86\Debug\Senparc.Weixin.MP.dll
+D:\Program\Gusu\GusuTest\Senparc.Weixin.MP\bin\x86\Debug\Senparc.Weixin.MP.pdb
+D:\Program\Gusu\GusuTest\Senparc.Weixin.MP\bin\x86\Debug\Senparc.Weixin.dll
+D:\Program\Gusu\GusuTest\Senparc.Weixin.MP\bin\x86\Debug\Senparc.Weixin.pdb
+D:\Program\Gusu\GusuTest\Senparc.Weixin.MP\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Program\Gusu\GusuTest\Senparc.Weixin.MP\obj\x86\Debug\Senparc.Weixin.MP.dll
+D:\Program\Gusu\GusuTest\Senparc.Weixin.MP\obj\x86\Debug\Senparc.Weixin.MP.pdb

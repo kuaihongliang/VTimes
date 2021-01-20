@@ -1,0 +1,18 @@
+2020-05-15 22:16:44.495 ERROR ASP.mobile_jsapipaypage_aspx: ---   在 System.Decimal.ToInt16(Decimal value)
+   在 System.Convert.ToInt16(Decimal value)
+   在 DTcms.Web.mobile.JsApiPayPage.Page_Load(Object sender, EventArgs e) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\mobile\JsApiPayPage.aspx.cs:行号 42---System.OverflowException: 值对于 Int16 太大或太小。
+   在 System.Decimal.ToInt16(Decimal value)
+   在 System.Convert.ToInt16(Decimal value)
+   在 DTcms.Web.mobile.JsApiPayPage.Page_Load(Object sender, EventArgs e) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\mobile\JsApiPayPage.aspx.cs:行号 42
+2020-05-15 22:16:50.688 ERROR ASP.mobile_jsapipaypage_aspx: ---   在 System.Decimal.ToInt16(Decimal value)
+   在 System.Convert.ToInt16(Decimal value)
+   在 DTcms.Web.mobile.JsApiPayPage.Page_Load(Object sender, EventArgs e) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\mobile\JsApiPayPage.aspx.cs:行号 42---System.OverflowException: 值对于 Int16 太大或太小。
+   在 System.Decimal.ToInt16(Decimal value)
+   在 System.Convert.ToInt16(Decimal value)
+   在 DTcms.Web.mobile.JsApiPayPage.Page_Load(Object sender, EventArgs e) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\mobile\JsApiPayPage.aspx.cs:行号 42
+2020-05-15 22:17:40.800 ERROR ASP.mobile_jsapipaypage_aspx: ---   在 System.Decimal.ToInt16(Decimal value)
+   在 System.Convert.ToInt16(Decimal value)
+   在 DTcms.Web.mobile.JsApiPayPage.Page_Load(Object sender, EventArgs e) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\mobile\JsApiPayPage.aspx.cs:行号 42---System.OverflowException: 值对于 Int16 太大或太小。
+   在 System.Decimal.ToInt16(Decimal value)
+   在 System.Convert.ToInt16(Decimal value)
+   在 DTcms.Web.mobile.JsApiPayPage.Page_Load(Object sender, EventArgs e) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\mobile\JsApiPayPage.aspx.cs:行号 42

@@ -1,0 +1,85 @@
+2020-07-10 15:35:44.402 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:36:39.901 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:37:28.061 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:37:29.538 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:37:30.915 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:39:01.074 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:39:01.090 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:39:01.096 ERROR HttpService: System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Util.StringExpressionSet.CanonicalizePath(String path, Boolean needFullPath)
+   在 System.Security.Util.StringExpressionSet.CreateListFromExpressions(String[] str, Boolean needFullPath)
+   在 System.Security.Permissions.FileIOPermission.AddPathList(FileIOPermissionAccess access, AccessControlActions control, String[] pathListOrig, Boolean checkForDuplicates, Boolean needFullPath, Boolean copyPathList)
+   在 System.Security.Permissions.FileIOPermission..ctor(FileIOPermissionAccess access, String path)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 69
+2020-07-10 15:40:24.980 ERROR HttpService: System.Security.Cryptography.CryptographicException: 系统找不到指定的路径。
+
+   在 System.Security.Cryptography.CryptographicException.ThrowCryptographicException(Int32 hr)
+   在 System.Security.Cryptography.X509Certificates.X509Utils._QueryCertFileType(String fileName)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 70
+2020-07-10 15:40:25.115 ERROR HttpService: System.Security.Cryptography.CryptographicException: 系统找不到指定的路径。
+
+   在 System.Security.Cryptography.CryptographicException.ThrowCryptographicException(Int32 hr)
+   在 System.Security.Cryptography.X509Certificates.X509Utils._QueryCertFileType(String fileName)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 70
+2020-07-10 15:40:25.118 ERROR HttpService: System.Security.Cryptography.CryptographicException: 系统找不到指定的路径。
+
+   在 System.Security.Cryptography.CryptographicException.ThrowCryptographicException(Int32 hr)
+   在 System.Security.Cryptography.X509Certificates.X509Utils._QueryCertFileType(String fileName)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate.LoadCertificateFromFile(String fileName, Object password, X509KeyStorageFlags keyStorageFlags)
+   在 System.Security.Cryptography.X509Certificates.X509Certificate2..ctor(String fileName, String password)
+   在 WxPayAPI.HttpService.Post(String xml, String url, Boolean isUseCert, Int32 timeout) 位置 D:\项目\徒步戈壁\徒步戈壁_绿徒公众号\DTcms.Web\lib\HttpService.cs:行号 70
