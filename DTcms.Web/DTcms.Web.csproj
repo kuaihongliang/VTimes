@@ -130,6 +130,9 @@
     <Content Include="admin\manager\manager_pwd.aspx" />
     <Content Include="admin\manager\role_edit.aspx" />
     <Content Include="admin\manager\role_list.aspx" />
+    <Content Include="admin\manager\student_bind_qr.aspx" />
+    <Content Include="admin\manager\student_edit.aspx" />
+    <Content Include="admin\manager\student_list.aspx" />
     <Content Include="admin\order\express_edit.aspx" />
     <Content Include="admin\order\express_list.aspx" />
     <Content Include="admin\order\order_config.aspx" />
@@ -1052,6 +1055,27 @@
     </Compile>
     <Compile Include="admin\manager\role_list.aspx.designer.cs">
       <DependentUpon>role_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\manager\student_bind_qr.aspx.cs">
+      <DependentUpon>student_bind_qr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\manager\student_bind_qr.aspx.designer.cs">
+      <DependentUpon>student_bind_qr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\manager\student_edit.aspx.cs">
+      <DependentUpon>student_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\manager\student_edit.aspx.designer.cs">
+      <DependentUpon>student_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\manager\student_list.aspx.cs">
+      <DependentUpon>student_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\manager\student_list.aspx.designer.cs">
+      <DependentUpon>student_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\order\express_edit.aspx.cs">
       <DependentUpon>express_edit.aspx</DependentUpon>
