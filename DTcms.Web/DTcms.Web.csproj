@@ -59,6 +59,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.JScript" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="QuickMark, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\QuickMark.dll</HintPath>
@@ -103,6 +107,8 @@
     <Content Include="admin\channel\site_list.aspx" />
     <Content Include="admin\channel\tags_edit.aspx" />
     <Content Include="admin\channel\tags_list.aspx" />
+    <Content Include="admin\curriculum\CurriculumEdit.aspx" />
+    <Content Include="admin\curriculum\CurriculumList.aspx" />
     <Content Include="admin\dialog\dialog_accept.aspx" />
     <Content Include="admin\dialog\dialog_article_attach.aspx" />
     <Content Include="admin\dialog\dialog_channel.aspx" />
@@ -932,6 +938,20 @@
     </Compile>
     <Compile Include="admin\channel\tags_list.aspx.designer.cs">
       <DependentUpon>tags_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\curriculum\CurriculumEdit.aspx.cs">
+      <DependentUpon>CurriculumEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\curriculum\CurriculumEdit.aspx.designer.cs">
+      <DependentUpon>CurriculumEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\curriculum\CurriculumList.aspx.cs">
+      <DependentUpon>CurriculumList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\curriculum\CurriculumList.aspx.designer.cs">
+      <DependentUpon>CurriculumList.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\dialog\dialog_accept.aspx.cs">
       <DependentUpon>dialog_accept.aspx</DependentUpon>
