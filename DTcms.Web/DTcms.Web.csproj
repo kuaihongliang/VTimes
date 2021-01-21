@@ -641,6 +641,7 @@
     <Content Include="mobile\JsApiPayPage.aspx" />
     <Content Include="mobile\js\swiper-3.4.2.min.js" />
     <Content Include="mobile\my_join.aspx" />
+    <Content Include="mobile\student_bind.aspx" />
     <Content Include="mobile\style\style.css" />
     <Content Include="mobile\support.aspx" />
     <Content Include="mobile\test_send_notice.aspx" />
@@ -1506,6 +1507,13 @@
     </Compile>
     <Compile Include="mobile\sendSMS.ashx.cs">
       <DependentUpon>sendSMS.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="mobile\student_bind.aspx.cs">
+      <DependentUpon>student_bind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mobile\student_bind.aspx.designer.cs">
+      <DependentUpon>student_bind.aspx</DependentUpon>
     </Compile>
     <Compile Include="mobile\support.aspx.cs">
       <DependentUpon>support.aspx</DependentUpon>
