@@ -20,7 +20,7 @@ namespace DTcms.Model
         private DateTime? _curriculumdate;
         private int? _teacherid;
         private string _teacher;
-        private int? _curriculum;
+        private int? _state;
         /// <summary>
         /// 
         /// </summary>
@@ -72,10 +72,10 @@ namespace DTcms.Model
         /// <summary>
         /// 
         /// </summary>
-        public int? Curriculum
+        public int? State
         {
-            set { _curriculum = value; }
-            get { return _curriculum; }
+            set { _state = value; }
+            get { return _state; }
         }
         #endregion Model
 

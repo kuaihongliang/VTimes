@@ -40,9 +40,9 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into C_Curriculum(");
-            strSql.Append("CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,Curriculum)");
+            strSql.Append("CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,State)");
             strSql.Append(" values (");
-            strSql.Append("@CurriculumName,@CurriculumRemark,@CurriculumDate,@TeacherID,@Teacher,@Curriculum)");
+            strSql.Append("@CurriculumName,@CurriculumRemark,@CurriculumDate,@TeacherID,@Teacher,@State)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
                     new SqlParameter("@CurriculumName", SqlDbType.NVarChar,50),
@@ -50,13 +50,13 @@ namespace DTcms.DAL
                     new SqlParameter("@CurriculumDate", SqlDbType.DateTime),
                     new SqlParameter("@TeacherID", SqlDbType.Int,4),
                     new SqlParameter("@Teacher", SqlDbType.NVarChar,50),
-                    new SqlParameter("@Curriculum", SqlDbType.Int,4)};
+                    new SqlParameter("@State", SqlDbType.Int,4)};
             parameters[0].Value = model.CurriculumName;
             parameters[1].Value = model.CurriculumRemark;
             parameters[2].Value = model.CurriculumDate;
             parameters[3].Value = model.TeacherID;
             parameters[4].Value = model.Teacher;
-            parameters[5].Value = model.Curriculum;
+            parameters[5].Value = model.State;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
@@ -80,7 +80,7 @@ namespace DTcms.DAL
             strSql.Append("CurriculumDate=@CurriculumDate,");
             strSql.Append("TeacherID=@TeacherID,");
             strSql.Append("Teacher=@Teacher,");
-            strSql.Append("Curriculum=@Curriculum");
+            strSql.Append("State=@State");
             strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
                     new SqlParameter("@CurriculumName", SqlDbType.NVarChar,50),
@@ -88,14 +88,14 @@ namespace DTcms.DAL
                     new SqlParameter("@CurriculumDate", SqlDbType.DateTime),
                     new SqlParameter("@TeacherID", SqlDbType.Int,4),
                     new SqlParameter("@Teacher", SqlDbType.NVarChar,50),
-                    new SqlParameter("@Curriculum", SqlDbType.Int,4),
+                    new SqlParameter("@State", SqlDbType.Int,4),
                     new SqlParameter("@ID", SqlDbType.Int,4)};
             parameters[0].Value = model.CurriculumName;
             parameters[1].Value = model.CurriculumRemark;
             parameters[2].Value = model.CurriculumDate;
             parameters[3].Value = model.TeacherID;
             parameters[4].Value = model.Teacher;
-            parameters[5].Value = model.Curriculum;
+            parameters[5].Value = model.State;
             parameters[6].Value = model.ID;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
@@ -160,7 +160,7 @@ namespace DTcms.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 ID,CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,Curriculum from C_Curriculum ");
+            strSql.Append("select  top 1 ID,CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,State from C_Curriculum ");
             strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
                     new SqlParameter("@ID", SqlDbType.Int,4)
@@ -212,9 +212,9 @@ namespace DTcms.DAL
                 {
                     model.Teacher = row["Teacher"].ToString();
                 }
-                if (row["Curriculum"] != null && row["Curriculum"].ToString() != "")
+                if (row["State"] != null && row["State"].ToString() != "")
                 {
-                    model.Curriculum = int.Parse(row["Curriculum"].ToString());
+                    model.State = int.Parse(row["State"].ToString());
                 }
             }
             return model;
@@ -226,7 +226,7 @@ namespace DTcms.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ID,CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,Curriculum ");
+            strSql.Append("select ID,CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,State ");
             strSql.Append(" FROM C_Curriculum ");
             if (strWhere.Trim() != "")
             {
@@ -246,7 +246,7 @@ namespace DTcms.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" ID,CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,Curriculum ");
+            strSql.Append(" ID,CurriculumName,CurriculumRemark,CurriculumDate,TeacherID,Teacher,State ");
             strSql.Append(" FROM C_Curriculum ");
             if (strWhere.Trim() != "")
             {

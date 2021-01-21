@@ -80,23 +80,70 @@
         <dl>
             <dt>备注：</dt>
             <dd>
-               <asp:TextBox ID="txtRemark" runat="server" CssClass="input normal" sucmsg=" "
+               <asp:TextBox ID="txtCurriculumRemark" runat="server" CssClass="input normal" sucmsg=" "
                     minlength="" MaxLength="100"></asp:TextBox>
             </dd>
         </dl>
     </div>
     <!--/内容-->
     <!--工具栏-->
+
     <div class="page-footer" runat="server" id="div_gongju">
         <div class="btn-list">
             <asp:Button ID="btnSubmit" runat="server" Text="保存" CssClass="btn" 
                 onclick="btnSubmit_Click"  />
-            <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onclick="javascript:history.back(-1);" />
+            <asp:Button ID="btnClose" runat="server" Text="关闭" CssClass="btn" 
+                onclick="btnClose_Click"  />
             <asp:Label ID="lblError" runat="server" Text="" Style="color: Red;"></asp:Label>
         </div>
         <div class="clear">
         </div>
     </div>
+         <div class="table-container" style="padding-bottom:5px">
+        <asp:Repeater ID="rptList" runat="server">
+                    <HeaderTemplate>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
+                            <tr>
+                                <th style="width: 10%" align="center">课程名称
+                                </th>
+                                <th style="width: 10%" align="center">课程时间
+                                </th>
+                                 <th style="width: 10%" align="center">授课老师
+                                </th>
+                                <th align="center">备注
+                                </th>
+                                <th align="center" style="width: 10%">操作
+                                </th>
+                            </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td align="center"><asp:HiddenField ID="hfdID" runat="server" Value='<%#Eval("ID") %>' />
+                                <%#Eval("CurriculumName") %>
+                            </td>
+                            <td align="center">
+                               <%#Eval("CurriculumDate") %>
+                            </td>
+                            <td align="center">
+                               <%#Eval("Teacher") %>
+                            </td>
+                             <td align="center">
+                               <%#Eval("CurriculumRemark") %>
+                            </td>
+                            <td align="center">
+                                <asp:LinkButton ID="lbtnEditColumn" runat="server" 
+                             CommandArgument='<%#Eval("ID") %>' OnClick="lbtnEditColumn_Click">修改</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnDelColumn" runat="server" OnClientClick="return confirm('确认删除？')"
+                                    CommandArgument='<%#Eval("ID") %>' OnClick="lbtnDelColumn_Click">删除</asp:LinkButton>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <%#rptList.Items.Count == 0 ? "<tr><td align=\"center\" colspan=\"5\">暂无记录</td></tr>" : ""%>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+                </div>
     <!--/工具栏-->
     </form>
 </body>
