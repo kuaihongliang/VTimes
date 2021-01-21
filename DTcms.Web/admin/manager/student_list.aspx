@@ -58,24 +58,16 @@
                 <HeaderTemplate>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
                         <tr>
-                            <th width="8%">选择</th>
-                            <th align="left" width="12%">姓名</th>
-                            <th align="left" width="12%">联系电话</th>
-                            <th align="left" width="12%">学历</th>
-                            <th align="left" width="12%">性别</th>
-                            <th align="left" width="12%">民族</th>
-                            <th align="left" width="12%">籍贯</th>
-                            <th align="left" width="12%">年龄</th>
-                            <th align="left" width="12%">身高</th>
-                            <th align="left" width="12%">体重</th>
-                            <th align="left" width="12%">所属班级</th>
-                            <th align="left" width="12%">有无病史</th>
-                            <th align="left" width="12%">所在学校</th>
-                            <th align="left" width="12%">身份证号</th>
-                            <th align="left" width="12%">小篮球年龄段</th>
-                            <th align="left" width="12%">介绍人</th>
-                            <th align="left" width="16%">添加时间</th>
-                            <th width="8%">状态</th>
+                            <th width="5%">选择</th>
+                            <th align="left">姓名</th>
+                            <th align="left" width="8%">联系电话</th>
+                            <th align="left" width="8%">学历</th>
+                            <th align="left" width="8%">性别</th>
+                            <th align="left" width="8%">民族</th>
+                            <th align="left" width="8%">籍贯</th>
+                            <th align="left" width="8%">年龄</th>
+                            <th align="left" width="8%">身份证号</th>
+                            <th align="left" width="8%">介绍人</th>
                             <th width="8%">操作</th>
                         </tr>
                 </HeaderTemplate>
@@ -85,12 +77,15 @@
                             <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" Style="vertical-align: middle;" />
                             <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
                         </td>
-                        <td><a href="manager_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>"><%# Eval("user_name") %></a></td>
-                        <td><%# Eval("real_name") %></td>
-                        <td><%#new DTcms.BLL.manager_role().GetTitle(Convert.ToInt32(Eval("role_id")))%></td>
-                        <td><%# Eval("telephone") %></td>
-                        <td><%#string.Format("{0:g}",Eval("add_time"))%></td>
-                        <td align="center"><%#Eval("is_lock").ToString().Trim() == "0" ? "正常" : "禁用"%></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
+                        <td><%Eval("st_name") %></td>
                         <td align="center"><a href="manager_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a></td>
                     </tr>
                 </ItemTemplate>

@@ -17,7 +17,6 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
-using Maticsoft.Common;
 using DTcms.Model;
 namespace DTcms.BLL
 {
@@ -30,14 +29,7 @@ namespace DTcms.BLL
 		public S_Student_Info()
 		{}
 		#region  BasicMethod
-
-		/// <summary>
-		/// 得到最大ID
-		/// </summary>
-		public int GetMaxId()
-		{
-			return dal.GetMaxId();
-		}
+        
 
 		/// <summary>
 		/// 是否存在该记录
@@ -87,30 +79,7 @@ namespace DTcms.BLL
 			
 			return dal.GetModel(st_id);
 		}
-
-		/// <summary>
-		/// 得到一个对象实体，从缓存中
-		/// </summary>
-		public DTcms.Model.S_Student_Info GetModelByCache(int st_id)
-		{
-			
-			string CacheKey = "S_Student_InfoModel-" + st_id;
-			object objModel = Maticsoft.Common.DataCache.GetCache(CacheKey);
-			if (objModel == null)
-			{
-				try
-				{
-					objModel = dal.GetModel(st_id);
-					if (objModel != null)
-					{
-						int ModelCache = Maticsoft.Common.ConfigHelper.GetConfigInt("ModelCache");
-						Maticsoft.Common.DataCache.SetCache(CacheKey, objModel, DateTime.Now.AddMinutes(ModelCache), TimeSpan.Zero);
-					}
-				}
-				catch{}
-			}
-			return (DTcms.Model.S_Student_Info)objModel;
-		}
+        
 
 		/// <summary>
 		/// 获得数据列表
