@@ -67,6 +67,8 @@
     <Compile Include="sms_message.cs" />
     <Compile Include="sms_template.cs" />
     <Compile Include="sys_config.cs" />
+    <Compile Include="S_Student_Info.cs" />
+    <Compile Include="S_Student_Parent.cs" />
     <Compile Include="url_rewrite.cs" />
     <Compile Include="users.cs" />
     <Compile Include="user_amount_log.cs" />
