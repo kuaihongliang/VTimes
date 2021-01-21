@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="student_list.aspx.cs" Inherits="DTcms.Web.admin.manager.student_list" %>
 
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <%@ Import Namespace="DTcms.Common" %>
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>管理员列表</title>
+    <title>学员列表</title>
     <link rel="stylesheet" type="text/css" href="../../scripts/artdialog/ui-dialog.css" />
     <link rel="stylesheet" type="text/css" href="../../css/pagination.css" />
     <link rel="stylesheet" type="text/css" href="../skin/icon/iconfont.css" />
@@ -23,10 +24,8 @@
     <form id="form1" runat="server">
         <!--导航栏-->
         <div class="location">
-            <a href="javascript:history.back(-1);" class="back"><i class="iconfont icon-up"></i><span>返回上一页</span></a>
-            <a href="../center.aspx" class="home"><i class="iconfont icon-home"></i><span>首页</span></a>
             <i class="arrow iconfont icon-arrow-right"></i>
-            <span>管理员列表</span>
+            <span>学员列表</span>
         </div>
         <!--/导航栏-->
 
@@ -37,15 +36,22 @@
                     <a class="menu-btn"><i class="iconfont icon-more"></i></a>
                     <div class="l-list">
                         <ul class="icon-list">
-                            <li><a href="manager_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
+                            <li><a href="student_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>添加学员</span></a></li>
                             <li><a href="javascript:;" onclick="checkAll(this);"><i class="iconfont icon-check"></i><span>全选</span></a></li>
                             <li>
-                                <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="return ExePostBack('btnDelete');" OnClick="btnDelete_Click"><i class="iconfont icon-delete"></i><span>删除</span></asp:LinkButton></li>
+                                <asp:LinkButton ID="btnDelete" runat="server" OnClientClick="return ExePostBack('btnDelete');" OnClick="btnDelete_Click"><i class="iconfont icon-delete"></i><span>删除学员</span></asp:LinkButton></li>
                         </ul>
+                        所属教练：
+                        <div class="rule-single-select">
+                            <asp:DropDownList ID="ddlTeacher" runat="server" CssClass="input">
+                                <asp:ListItem Value="" Selected="True">全部</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        学员姓名：
+                        <asp:TextBox ID="txtName" runat="server" CssClass="input" />
+                        <asp:Button ID="btnSearch" runat="server" Text="查询" OnClick="btnSearch_Click" Style="padding-right: 25px; padding-left: 25px; margin-left: 10px;" CssClass="btn" />&nbsp;
                     </div>
                     <div class="r-list">
-                        <asp:TextBox ID="txtKeywords" runat="server" CssClass="keyword" />
-                        <asp:LinkButton ID="lbtnSearch" runat="server" CssClass="btn-search" OnClick="btnSearch_Click"><i class="iconfont icon-search"></i></asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -58,44 +64,43 @@
                 <HeaderTemplate>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
                         <tr>
-                            <th width="8%">选择</th>
-                            <th align="left" width="12%">姓名</th>
-                            <th align="left" width="12%">联系电话</th>
-                            <th align="left" width="12%">学历</th>
-                            <th align="left" width="12%">性别</th>
-                            <th align="left" width="12%">民族</th>
-                            <th align="left" width="12%">籍贯</th>
-                            <th align="left" width="12%">年龄</th>
-                            <th align="left" width="12%">身高</th>
-                            <th align="left" width="12%">体重</th>
-                            <th align="left" width="12%">所属班级</th>
-                            <th align="left" width="12%">有无病史</th>
-                            <th align="left" width="12%">所在学校</th>
-                            <th align="left" width="12%">身份证号</th>
-                            <th align="left" width="12%">小篮球年龄段</th>
-                            <th align="left" width="12%">介绍人</th>
-                            <th align="left" width="16%">添加时间</th>
-                            <th width="8%">状态</th>
-                            <th width="8%">操作</th>
+                            <th width="5%">选择</th>
+                            <th align="left">姓名</th>
+                            <th align="left" width="8%">联系电话</th>
+                            <th align="left" width="8%">学历</th>
+                            <th align="left" width="8%">性别</th>
+                            <th align="left" width="8%">民族</th>
+                            <th align="left" width="8%">籍贯</th>
+                            <th align="left" width="8%">年龄</th>
+                            <th align="left" width="8%">身份证号</th>
+                            <th align="left" width="8%">介绍人</th>
+                            <th width="190">操作</th>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
                         <td align="center">
                             <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" Style="vertical-align: middle;" />
-                            <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
+                            <asp:HiddenField ID="hidId" Value='<%#Eval("st_id")%>' runat="server" />
                         </td>
-                        <td><a href="manager_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>"><%# Eval("user_name") %></a></td>
-                        <td><%# Eval("real_name") %></td>
-                        <td><%#new DTcms.BLL.manager_role().GetTitle(Convert.ToInt32(Eval("role_id")))%></td>
-                        <td><%# Eval("telephone") %></td>
-                        <td><%#string.Format("{0:g}",Eval("add_time"))%></td>
-                        <td align="center"><%#Eval("is_lock").ToString().Trim() == "0" ? "正常" : "禁用"%></td>
-                        <td align="center"><a href="manager_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a></td>
+                        <td><%#Eval("st_name")%></td>
+                        <td><%#Eval("st_telphone")%></td>
+                        <td><%#Eval("st_education")%></td>
+                        <td><%#Eval("st_sex")%></td>
+                        <td><%#Eval("st_nation")%></td>
+                        <td><%#Eval("st_native")%></td>
+                        <td><%#Eval("st_age")%></td>
+                        <td><%#Eval("st_idcard")%></td>
+                        <td><%#Eval("st_introducer")%></td>
+                        <td align="center">
+                            <a href="student_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("st_id")%>">修改信息</a>&nbsp;&nbsp;
+                            <a href="#">添加课时</a>&nbsp;&nbsp;
+                            <a href="#">绑定微信</a>
+                        </td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <%#rptList.Items.Count == 0 ? "<tr><td align=\"center\" colspan=\"8\">暂无记录</td></tr>" : ""%>
+                    <%#rptList.Items.Count == 0 ? "<tr><td align=\"center\" colspan=\"11\">暂无记录</td></tr>" : ""%>
   </table>
                 </FooterTemplate>
             </asp:Repeater>
@@ -104,13 +109,12 @@
 
         <!--内容底部-->
         <div class="line20"></div>
-        <div class="pagelist">
-            <div class="l-btns">
-                <span>显示</span><asp:TextBox ID="txtPageNum" runat="server" CssClass="pagenum" onkeydown="return checkNumber(event);"
-                    OnTextChanged="txtPageNum_TextChanged" AutoPostBack="True"></asp:TextBox><span>条/页</span>
-            </div>
-            <div id="PageContent" runat="server" class="default"></div>
-        </div>
+        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="当前页:%CurrentPageIndex%/%PageCount% 共有%RecordCount%条记录 %PageCount%/页"
+            FirstPageText="首页" HorizontalAlign="Center" InvalidPageIndexErrorMessage="页索引不是有效的数值！"
+            LastPageText="末页" NextPageText="下一页" PageIndexOutOfRangeErrorMessage="页索引超出范围！"
+            PageSize="20" PrevPageText="上一页" ShowCustomInfoSection="Left" ShowInputBox="Always"
+            Width="100%" OnPageChanged="AspNetPager1_PageChanged" NumericButtonCount="5">
+        </webdiyer:AspNetPager>
         <!--/内容底部-->
     </form>
 </body>

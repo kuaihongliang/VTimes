@@ -31,22 +31,31 @@ namespace DTcms.Web.admin.manager {
         protected global::System.Web.UI.WebControls.LinkButton btnDelete;
         
         /// <summary>
-        /// txtKeywords 控件。
+        /// ddlTeacher 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKeywords;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTeacher;
         
         /// <summary>
-        /// lbtnSearch 控件。
+        /// txtName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
+        
+        /// <summary>
+        /// btnSearch 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// rptList 控件。
@@ -58,21 +67,12 @@ namespace DTcms.Web.admin.manager {
         protected global::System.Web.UI.WebControls.Repeater rptList;
         
         /// <summary>
-        /// txtPageNum 控件。
+        /// AspNetPager1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPageNum;
-        
-        /// <summary>
-        /// PageContent 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PageContent;
+        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
     }
 }
