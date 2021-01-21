@@ -208,12 +208,14 @@
     <Content Include="bin\QuickMark.dll" />
     <Content Include="bin\RestSharp.dll" />
     <Content Include="bin\ThoughtWorks.QRCode.dll" />
+    <Content Include="css\global.css" />
     <Content Include="css\image1.gif" />
     <Content Include="css\image2.gif" />
     <Content Include="css\jcrop.gif" />
     <Content Include="css\jquery.jcrop.css" />
     <Content Include="css\meneame.jpg" />
     <Content Include="css\pagination.css" />
+    <Content Include="css\table.css" />
     <Content Include="css\validate.css" />
     <Content Include="css\valid_icons.png" />
     <Content Include="editor\dialogs\anchor\anchor.html" />

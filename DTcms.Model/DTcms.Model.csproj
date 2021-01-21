@@ -48,6 +48,7 @@
     <Compile Include="article_comment.cs" />
     <Compile Include="article_tags.cs" />
     <Compile Include="article_tags_relation.cs" />
+    <Compile Include="C_Curriculum.cs" />
     <Compile Include="express.cs" />
     <Compile Include="mail_template.cs" />
     <Compile Include="manager.cs" />
