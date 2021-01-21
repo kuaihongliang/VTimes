@@ -37,9 +37,9 @@ namespace DTcms.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into S_Student_Info(");
-            strSql.Append("FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount)");
+            strSql.Append("FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount,student_openid)");
             strSql.Append(" values (");
-            strSql.Append("@FK_belong_teacher,@st_name,@st_telphone,@st_education,@st_sex,@st_nation,@st_native,@st_age,@st_long,@st_weight,@st_class,@st_disease,@st_school,@st_idcard,@st_ballage,@st_introducer,@st_remark,@FK_class_level,@st_status,@create_time,@account_amount)");
+            strSql.Append("@FK_belong_teacher,@st_name,@st_telphone,@st_education,@st_sex,@st_nation,@st_native,@st_age,@st_long,@st_weight,@st_class,@st_disease,@st_school,@st_idcard,@st_ballage,@st_introducer,@st_remark,@FK_class_level,@st_status,@create_time,@account_amount,@student_openid)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
                     new SqlParameter("@FK_belong_teacher", SqlDbType.Int,4),
@@ -62,7 +62,8 @@ namespace DTcms.DAL
                     new SqlParameter("@FK_class_level", SqlDbType.Int,4),
                     new SqlParameter("@st_status", SqlDbType.Int,4),
                     new SqlParameter("@create_time", SqlDbType.DateTime),
-                    new SqlParameter("@account_amount", SqlDbType.Int,4)};
+                    new SqlParameter("@account_amount", SqlDbType.Int,4),
+                    new SqlParameter("@student_openid", SqlDbType.NVarChar,50)};
             parameters[0].Value = model.FK_belong_teacher;
             parameters[1].Value = model.st_name;
             parameters[2].Value = model.st_telphone;
@@ -84,6 +85,7 @@ namespace DTcms.DAL
             parameters[18].Value = model.st_status;
             parameters[19].Value = model.create_time;
             parameters[20].Value = model.account_amount;
+            parameters[21].Value = model.student_openid;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
@@ -122,7 +124,8 @@ namespace DTcms.DAL
             strSql.Append("FK_class_level=@FK_class_level,");
             strSql.Append("st_status=@st_status,");
             strSql.Append("create_time=@create_time,");
-            strSql.Append("account_amount=@account_amount");
+            strSql.Append("account_amount=@account_amount,");
+            strSql.Append("student_openid=@student_openid");
             strSql.Append(" where st_id=@st_id");
             SqlParameter[] parameters = {
                     new SqlParameter("@FK_belong_teacher", SqlDbType.Int,4),
@@ -146,6 +149,7 @@ namespace DTcms.DAL
                     new SqlParameter("@st_status", SqlDbType.Int,4),
                     new SqlParameter("@create_time", SqlDbType.DateTime),
                     new SqlParameter("@account_amount", SqlDbType.Int,4),
+                    new SqlParameter("@student_openid", SqlDbType.NVarChar,50),
                     new SqlParameter("@st_id", SqlDbType.Int,4)};
             parameters[0].Value = model.FK_belong_teacher;
             parameters[1].Value = model.st_name;
@@ -168,7 +172,8 @@ namespace DTcms.DAL
             parameters[18].Value = model.st_status;
             parameters[19].Value = model.create_time;
             parameters[20].Value = model.account_amount;
-            parameters[21].Value = model.st_id;
+            parameters[21].Value = model.student_openid;
+            parameters[22].Value = model.st_id;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -232,7 +237,7 @@ namespace DTcms.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 st_id,FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount from S_Student_Info ");
+            strSql.Append("select  top 1 st_id,FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount,student_openid from S_Student_Info ");
             strSql.Append(" where st_id=@st_id");
             SqlParameter[] parameters = {
                     new SqlParameter("@st_id", SqlDbType.Int,4)
@@ -348,6 +353,10 @@ namespace DTcms.DAL
                 {
                     model.account_amount = int.Parse(row["account_amount"].ToString());
                 }
+                if (row["student_openid"] != null)
+                {
+                    model.student_openid = row["student_openid"].ToString();
+                }
             }
             return model;
         }
@@ -358,7 +367,7 @@ namespace DTcms.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select st_id,FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount ");
+            strSql.Append("select st_id,FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount,student_openid ");
             strSql.Append(" FROM S_Student_Info ");
             if (strWhere.Trim() != "")
             {
@@ -378,7 +387,7 @@ namespace DTcms.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" st_id,FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount ");
+            strSql.Append(" st_id,FK_belong_teacher,st_name,st_telphone,st_education,st_sex,st_nation,st_native,st_age,st_long,st_weight,st_class,st_disease,st_school,st_idcard,st_ballage,st_introducer,st_remark,FK_class_level,st_status,create_time,account_amount,student_openid ");
             strSql.Append(" FROM S_Student_Info ");
             if (strWhere.Trim() != "")
             {

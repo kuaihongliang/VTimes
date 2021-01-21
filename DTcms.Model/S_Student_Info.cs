@@ -32,6 +32,7 @@ namespace DTcms.Model
         private int? _st_status;
         private DateTime? _create_time;
         private int? _account_amount;
+        private string _student_openid;
         /// <summary>
         /// 
         /// </summary>
@@ -207,6 +208,14 @@ namespace DTcms.Model
         {
             set { _account_amount = value; }
             get { return _account_amount; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string student_openid
+        {
+            set { _student_openid = value; }
+            get { return _student_openid; }
         }
         #endregion Model
 

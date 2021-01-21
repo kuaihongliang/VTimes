@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<title>后台管理中心</title>
+<title>V时代俱乐部后学生会员管理系统</title>
 <link rel="stylesheet" type="text/css" href="../scripts/artdialog/ui-dialog.css" />
 <link rel="stylesheet" type="text/css" href="skin/icon/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="skin/default/style.css" />
