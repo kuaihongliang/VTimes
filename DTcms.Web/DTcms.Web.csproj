@@ -484,13 +484,17 @@
     <Content Include="editor\ueditor.config.js" />
     <Content Include="editor\ueditor.parse.js" />
     <Content Include="editor\ueditor.parse.min.js" />
+    <Content Include="images\bg.gif" />
     <Content Include="images\oauth\feixin.png" />
     <Content Include="images\oauth\kaixin.png" />
     <Content Include="images\oauth\qq.png" />
     <Content Include="images\oauth\renren.png" />
     <Content Include="images\oauth\weibo.png" />
     <Content Include="images\oauth\weixin.png" />
+    <Content Include="images\site_under_main.jpg" />
+    <Content Include="images\style.css" />
     <Content Include="index.aspx" />
+    <Content Include="index.htm" />
     <Content Include="mobile\baoming.aspx" />
     <Content Include="mobile\comment_list.aspx" />
     <Content Include="mobile\comment_reply.aspx" />

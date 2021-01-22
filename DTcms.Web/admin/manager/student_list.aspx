@@ -106,7 +106,8 @@
                         <td align="center">
                             <a href="student_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("st_id")%>">修改信息</a>&nbsp;&nbsp;
                             <a href="#">添加课时</a>&nbsp;&nbsp;
-                            <a style="cursor: pointer;" href="javascript:;" onclick="bindWX(this)">绑定微信</a>
+                            <a href='student_bind_qr.aspx?id=<%#Eval("st_id") %>' target="_blank">绑定微信</a>
+                            <%--<a style="cursor: pointer;" href="javascript:;" onclick="bindWX(this)">绑定微信</a>--%>
                         </td>
                     </tr>
                 </ItemTemplate>
