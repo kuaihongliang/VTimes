@@ -11,7 +11,7 @@ namespace DTcms.Web.admin.users
 {
 
 
-    public partial class user_list
+    public partial class user_rechage
     {
 
         /// <summary>

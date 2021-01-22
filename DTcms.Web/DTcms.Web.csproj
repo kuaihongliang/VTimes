@@ -99,14 +99,6 @@
     <Content Include="admin\action\team_edit.aspx" />
     <Content Include="admin\action\team_list.aspx" />
     <Content Include="admin\center.aspx" />
-    <Content Include="admin\channel\attribute_field_edit.aspx" />
-    <Content Include="admin\channel\attribute_field_list.aspx" />
-    <Content Include="admin\channel\channel_edit.aspx" />
-    <Content Include="admin\channel\channel_list.aspx" />
-    <Content Include="admin\channel\site_edit.aspx" />
-    <Content Include="admin\channel\site_list.aspx" />
-    <Content Include="admin\channel\tags_edit.aspx" />
-    <Content Include="admin\channel\tags_list.aspx" />
     <Content Include="admin\curriculum\CurriculumEdit.aspx" />
     <Content Include="admin\curriculum\CurriculumList.aspx" />
     <Content Include="admin\dialog\dialog_accept.aspx" />
@@ -143,16 +135,6 @@
     <Content Include="admin\order\payment_list.aspx" />
     <Content Include="admin\order\site_payment_edit.aspx" />
     <Content Include="admin\order\site_payment_list.aspx" />
-    <Content Include="admin\settings\builder_html.aspx" />
-    <Content Include="admin\settings\nav_edit.aspx" />
-    <Content Include="admin\settings\nav_list.aspx" />
-    <Content Include="admin\settings\plugin_list.aspx" />
-    <Content Include="admin\settings\sys_config.aspx" />
-    <Content Include="admin\settings\templet_file_edit.aspx" />
-    <Content Include="admin\settings\templet_file_list.aspx" />
-    <Content Include="admin\settings\templet_list.aspx" />
-    <Content Include="admin\settings\url_rewrite_edit.aspx" />
-    <Content Include="admin\settings\url_rewrite_list.aspx" />
     <Content Include="admin\skin\base.css" />
     <Content Include="admin\skin\default\ie_update.jpg" />
     <Content Include="admin\skin\default\loadimg.gif" />
@@ -166,28 +148,12 @@
     <Content Include="admin\skin\icon\iconfont.js" />
     <Content Include="admin\skin\icon\iconfont.svg" />
     <Content Include="admin\skin\layout.css" />
-    <Content Include="admin\users\amount_log.aspx" />
-    <Content Include="admin\users\group_edit.aspx" />
-    <Content Include="admin\users\group_list.aspx" />
-    <Content Include="admin\users\mail_template_edit.aspx" />
-    <Content Include="admin\users\mail_template_list.aspx" />
-    <Content Include="admin\users\message_edit.aspx" />
-    <Content Include="admin\users\message_list.aspx" />
-    <Content Include="admin\users\oauth_app_edit.aspx" />
-    <Content Include="admin\users\oauth_app_list.aspx" />
-    <Content Include="admin\users\point_log.aspx" />
-    <Content Include="admin\users\recharge_edit.aspx" />
-    <Content Include="admin\users\recharge_list.aspx" />
-    <Content Include="admin\users\site_oauth_edit.aspx" />
-    <Content Include="admin\users\site_oauth_list.aspx" />
-    <Content Include="admin\users\sms_template_edit.aspx" />
-    <Content Include="admin\users\sms_template_list.aspx" />
-    <Content Include="admin\users\user_audit.aspx" />
-    <Content Include="admin\users\user_config.aspx" />
+    <Content Include="admin\users\pay_item_edit.aspx" />
+    <Content Include="admin\users\pay_item_list.aspx" />
+    <Content Include="admin\users\user_agreements.aspx" />
     <Content Include="admin\users\user_edit.aspx" />
     <Content Include="admin\users\user_list.aspx" />
-    <Content Include="admin\users\user_oauth.aspx" />
-    <Content Include="admin\users\user_sms.aspx" />
+    <Content Include="admin\users\user_rechage.aspx" />
     <Content Include="api\oauth\index.aspx" />
     <Content Include="api\oauth\result_json.aspx" />
     <Content Include="api\oauth\return_url.aspx" />
@@ -506,140 +472,6 @@
     <Content Include="mobile\dist\js\swiper.js" />
     <Content Include="mobile\dist\js\swiper.min.js" />
     <Content Include="mobile\GetNotify.aspx" />
-    <Content Include="mobile\images\云南茶马古道_01.gif" />
-    <Content Include="mobile\images\云南茶马古道_02.gif" />
-    <Content Include="mobile\images\云南茶马古道_03.gif" />
-    <Content Include="mobile\images\云南茶马古道_04.gif" />
-    <Content Include="mobile\images\云南茶马古道_05.gif" />
-    <Content Include="mobile\images\云南茶马古道_06.gif" />
-    <Content Include="mobile\images\云南茶马古道_07.gif" />
-    <Content Include="mobile\images\云南茶马古道_08.gif" />
-    <Content Include="mobile\images\云南茶马古道_10.gif" />
-    <Content Include="mobile\images\云南茶马古道_14.jpg" />
-    <Content Include="mobile\images\行程.gif" />
-    <Content Include="mobile\images\详细-06-1.gif" />
-    <Content Include="mobile\images\详细-07.gif" />
-    <Content Include="mobile\images\详细-08.gif" />
-    <Content Include="mobile\image\1-1.gif" />
-    <Content Include="mobile\image\1-10.gif" />
-    <Content Include="mobile\image\1-11.gif" />
-    <Content Include="mobile\image\1-2.gif" />
-    <Content Include="mobile\image\1-3.gif" />
-    <Content Include="mobile\image\1-4.gif" />
-    <Content Include="mobile\image\1-5.gif" />
-    <Content Include="mobile\image\1-6.gif" />
-    <Content Include="mobile\image\1-7.gif" />
-    <Content Include="mobile\image\1-8.gif" />
-    <Content Include="mobile\image\1-9.gif" />
-    <Content Include="mobile\image\2-1.jpg" />
-    <Content Include="mobile\image\2-10.jpg" />
-    <Content Include="mobile\image\2-11.jpg" />
-    <Content Include="mobile\image\2-12.jpg" />
-    <Content Include="mobile\image\2-2.gif" />
-    <Content Include="mobile\image\2-3.jpg" />
-    <Content Include="mobile\image\2-4.gif" />
-    <Content Include="mobile\image\2-9.jpg" />
-    <Content Include="mobile\image\3-1.jpg" />
-    <Content Include="mobile\image\3-2.jpg" />
-    <Content Include="mobile\image\logo2.png" />
-    <Content Include="mobile\image\m1.jpg" />
-    <Content Include="mobile\image\m2.jpg" />
-    <Content Include="mobile\image\m3.jpg" />
-    <Content Include="mobile\image\qrcode_for_gh_6cc5dbf54e3f_344.jpg" />
-    <Content Include="mobile\image\t1.jpg" />
-    <Content Include="mobile\image\t2.jpg" />
-    <Content Include="mobile\image\t3.jpg" />
-    <Content Include="mobile\image\不含.jpg" />
-    <Content Include="mobile\image\头部幻灯片.jpg" />
-    <Content Include="mobile\image\行程.jpg" />
-    <Content Include="mobile\image\详细-01.jpg" />
-    <Content Include="mobile\image\详细-02.jpg" />
-    <Content Include="mobile\image\详细-03.jpg" />
-    <Content Include="mobile\image\详细-04.jpg" />
-    <Content Include="mobile\image\详细-05.jpg" />
-    <Content Include="mobile\image\详细-06-1.jpg" />
-    <Content Include="mobile\image\详细-06.jpg" />
-    <Content Include="mobile\image\详细-07.jpg" />
-    <Content Include="mobile\image\详细-08.jpg" />
-    <Content Include="mobile\image\详细-09.jpg" />
-    <Content Include="mobile\image\费用.jpg" />
-    <Content Include="mobile\image\队伍信息1.jpg" />
-    <Content Include="mobile\image\队伍信息2.jpg" />
-    <Content Include="mobile\image\项目介绍.jpg" />
-    <Content Include="mobile\img\A1.jpg" />
-    <Content Include="mobile\img\A2.jpg" />
-    <Content Include="mobile\img\A3.jpg" />
-    <Content Include="mobile\img\A4.jpg" />
-    <Content Include="mobile\img\A5.jpg" />
-    <Content Include="mobile\img\A6.jpg" />
-    <Content Include="mobile\img\aa1.jpg" />
-    <Content Include="mobile\img\aa2.jpg" />
-    <Content Include="mobile\img\aa3.jpg" />
-    <Content Include="mobile\img\aa4.jpg" />
-    <Content Include="mobile\img\aa5.jpg" />
-    <Content Include="mobile\img\aa6.jpg" />
-    <Content Include="mobile\img\aa7.jpg" />
-    <Content Include="mobile\img\aa8.jpg" />
-    <Content Include="mobile\img\arrow_down.png" />
-    <Content Include="mobile\img\arrow_up.png" />
-    <Content Include="mobile\img\b1.jpg" />
-    <Content Include="mobile\img\b10.jpg" />
-    <Content Include="mobile\img\b11.jpg" />
-    <Content Include="mobile\img\b2.jpg" />
-    <Content Include="mobile\img\b3.jpg" />
-    <Content Include="mobile\img\b4.jpg" />
-    <Content Include="mobile\img\b5.jpg" />
-    <Content Include="mobile\img\b6.jpg" />
-    <Content Include="mobile\img\b7.jpg" />
-    <Content Include="mobile\img\b8.jpg" />
-    <Content Include="mobile\img\b9.jpg" />
-    <Content Include="mobile\img\banner.jpg" />
-    <Content Include="mobile\img\bao1.jpg" />
-    <Content Include="mobile\img\bao1.png" />
-    <Content Include="mobile\img\bao2.jpg" />
-    <Content Include="mobile\img\bao3.jpg" />
-    <Content Include="mobile\img\bao4.jpg" />
-    <Content Include="mobile\img\bao5.jpg" />
-    <Content Include="mobile\img\baoming.png" />
-    <Content Include="mobile\img\baoming_0.png" />
-    <Content Include="mobile\img\baoming_1.jpg" />
-    <Content Include="mobile\img\day1.jpg" />
-    <Content Include="mobile\img\day2.jpg" />
-    <Content Include="mobile\img\day3.jpg" />
-    <Content Include="mobile\img\day4.jpg" />
-    <Content Include="mobile\img\face.jpg" />
-    <Content Include="mobile\img\gongyi.jpg" />
-    <Content Include="mobile\img\M1.png" />
-    <Content Include="mobile\img\M2.png" />
-    <Content Include="mobile\img\M3.png" />
-    <Content Include="mobile\img\M4.png" />
-    <Content Include="mobile\img\m5.jpg" />
-    <Content Include="mobile\img\m6.jpg" />
-    <Content Include="mobile\img\mm1.jpg" />
-    <Content Include="mobile\img\mm2.jpg" />
-    <Content Include="mobile\img\mm3.jpg" />
-    <Content Include="mobile\img\mm4.jpg" />
-    <Content Include="mobile\img\mm5.jpg" />
-    <Content Include="mobile\img\people.jpg" />
-    <Content Include="mobile\img\q1.png" />
-    <Content Include="mobile\img\q2.png" />
-    <Content Include="mobile\img\q3.png" />
-    <Content Include="mobile\img\team1.jpg" />
-    <Content Include="mobile\img\team2.jpg" />
-    <Content Include="mobile\img\team3.jpg" />
-    <Content Include="mobile\img\top.jpg" />
-    <Content Include="mobile\img\tt1.jpg" />
-    <Content Include="mobile\img\tt1.png" />
-    <Content Include="mobile\img\tt2.jpg" />
-    <Content Include="mobile\img\tt3.jpg" />
-    <Content Include="mobile\img\tt3.png" />
-    <Content Include="mobile\img\t_1.jpg" />
-    <Content Include="mobile\img\t_2.jpg" />
-    <Content Include="mobile\img\zuzhijigou.png" />
-    <Content Include="mobile\img\媒体支持.jpg" />
-    <Content Include="mobile\img\组织机构.jpg" />
-    <Content Include="mobile\img\路线四天.jpg" />
-    <Content Include="mobile\images\退赛.jpg" />
     <Content Include="mobile\index.aspx" />
     <Content Include="mobile\join_list.aspx" />
     <Content Include="mobile\JsApiPayPage.aspx" />
@@ -764,74 +596,6 @@
     <Content Include="scripts\jquery\Validform_v5.3.2_min.js" />
     <Content Include="scripts\webuploader\uploader.swf" />
     <Content Include="scripts\webuploader\webuploader.min.js" />
-    <Content Include="templates\main\about.png" />
-    <Content Include="templates\main\about.xml" />
-    <Content Include="templates\main\cart.html" />
-    <Content Include="templates\main\content.html" />
-    <Content Include="templates\main\css\flexslider.css" />
-    <Content Include="templates\main\css\icon\demo.css" />
-    <Content Include="templates\main\css\icon\demo_fontclass.html" />
-    <Content Include="templates\main\css\icon\demo_symbol.html" />
-    <Content Include="templates\main\css\icon\demo_unicode.html" />
-    <Content Include="templates\main\css\icon\iconfont.css" />
-    <Content Include="templates\main\css\icon\iconfont.js" />
-    <Content Include="templates\main\css\icon\iconfont.svg" />
-    <Content Include="templates\main\css\style.css" />
-    <Content Include="templates\main\css\viewer.min.css" />
-    <Content Include="templates\main\down.html" />
-    <Content Include="templates\main\down_list.html" />
-    <Content Include="templates\main\down_show.html" />
-    <Content Include="templates\main\error.html" />
-    <Content Include="templates\main\goods.html" />
-    <Content Include="templates\main\goods_list.html" />
-    <Content Include="templates\main\goods_show.html" />
-    <Content Include="templates\main\images\avatar-bg.png" />
-    <Content Include="templates\main\images\banner_1.png" />
-    <Content Include="templates\main\images\banner_2.png" />
-    <Content Include="templates\main\images\banner_3.png" />
-    <Content Include="templates\main\images\focus_1.png" />
-    <Content Include="templates\main\images\focus_2.png" />
-    <Content Include="templates\main\images\logo.png" />
-    <Content Include="templates\main\images\slide_btns.png" />
-    <Content Include="templates\main\images\user-avatar.png" />
-    <Content Include="templates\main\index.html" />
-    <Content Include="templates\main\js\avatar.js" />
-    <Content Include="templates\main\js\cart.js" />
-    <Content Include="templates\main\js\common.js" />
-    <Content Include="templates\main\js\jqslider.js" />
-    <Content Include="templates\main\js\jquery.flexslider-min.js" />
-    <Content Include="templates\main\js\login-validate.js" />
-    <Content Include="templates\main\js\picture.js" />
-    <Content Include="templates\main\js\register-validate.js" />
-    <Content Include="templates\main\js\viewer-jquery.min.js" />
-    <Content Include="templates\main\login.html" />
-    <Content Include="templates\main\news.html" />
-    <Content Include="templates\main\news_list.html" />
-    <Content Include="templates\main\news_show.html" />
-    <Content Include="templates\main\oauth_login.html" />
-    <Content Include="templates\main\payment.html" />
-    <Content Include="templates\main\photo.html" />
-    <Content Include="templates\main\photo_list.html" />
-    <Content Include="templates\main\photo_show.html" />
-    <Content Include="templates\main\register.html" />
-    <Content Include="templates\main\repassword.html" />
-    <Content Include="templates\main\search.html" />
-    <Content Include="templates\main\shopping.html" />
-    <Content Include="templates\main\useramount.html" />
-    <Content Include="templates\main\usercenter.html" />
-    <Content Include="templates\main\usermessage.html" />
-    <Content Include="templates\main\usermessage_show.html" />
-    <Content Include="templates\main\userorder.html" />
-    <Content Include="templates\main\userorder_show.html" />
-    <Content Include="templates\main\userpoint.html" />
-    <Content Include="templates\main\video.html" />
-    <Content Include="templates\main\video_list.html" />
-    <Content Include="templates\main\video_show.html" />
-    <Content Include="templates\main\_comment_box.html" />
-    <Content Include="templates\main\_footer.html" />
-    <Content Include="templates\main\_header.html" />
-    <Content Include="templates\main\_share_js.html" />
-    <Content Include="templates\main\_ucenter_nav.html" />
     <Content Include="watermark.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -892,62 +656,6 @@
     </Compile>
     <Compile Include="admin\center.aspx.designer.cs">
       <DependentUpon>center.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\attribute_field_edit.aspx.cs">
-      <DependentUpon>attribute_field_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\attribute_field_edit.aspx.designer.cs">
-      <DependentUpon>attribute_field_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\attribute_field_list.aspx.cs">
-      <DependentUpon>attribute_field_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\attribute_field_list.aspx.designer.cs">
-      <DependentUpon>attribute_field_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\channel_edit.aspx.cs">
-      <DependentUpon>channel_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\channel_edit.aspx.designer.cs">
-      <DependentUpon>channel_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\channel_list.aspx.cs">
-      <DependentUpon>channel_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\channel_list.aspx.designer.cs">
-      <DependentUpon>channel_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\site_edit.aspx.cs">
-      <DependentUpon>site_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\site_edit.aspx.designer.cs">
-      <DependentUpon>site_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\site_list.aspx.cs">
-      <DependentUpon>site_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\site_list.aspx.designer.cs">
-      <DependentUpon>site_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\tags_edit.aspx.cs">
-      <DependentUpon>tags_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\tags_edit.aspx.designer.cs">
-      <DependentUpon>tags_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\channel\tags_list.aspx.cs">
-      <DependentUpon>tags_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\channel\tags_list.aspx.designer.cs">
-      <DependentUpon>tags_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\curriculum\CurriculumEdit.aspx.cs">
       <DependentUpon>CurriculumEdit.aspx</DependentUpon>
@@ -1157,201 +865,26 @@
     <Compile Include="admin\order\site_payment_list.aspx.designer.cs">
       <DependentUpon>site_payment_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\settings\builder_html.aspx.cs">
-      <DependentUpon>builder_html.aspx</DependentUpon>
+    <Compile Include="admin\users\pay_item_edit.aspx.cs">
+      <DependentUpon>pay_item_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\settings\builder_html.aspx.designer.cs">
-      <DependentUpon>builder_html.aspx</DependentUpon>
+    <Compile Include="admin\users\pay_item_edit.aspx.designer.cs">
+      <DependentUpon>pay_item_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\settings\nav_edit.aspx.cs">
-      <DependentUpon>nav_edit.aspx</DependentUpon>
+    <Compile Include="admin\users\pay_item_list.aspx.cs">
+      <DependentUpon>pay_item_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\settings\nav_edit.aspx.designer.cs">
-      <DependentUpon>nav_edit.aspx</DependentUpon>
+    <Compile Include="admin\users\pay_item_list.aspx.designer.cs">
+      <DependentUpon>pay_item_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\settings\nav_list.aspx.cs">
-      <DependentUpon>nav_list.aspx</DependentUpon>
+    <Compile Include="admin\users\user_agreements.aspx.cs">
+      <DependentUpon>user_agreements.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\settings\nav_list.aspx.designer.cs">
-      <DependentUpon>nav_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\settings\plugin_list.aspx.cs">
-      <DependentUpon>plugin_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\settings\plugin_list.aspx.designer.cs">
-      <DependentUpon>plugin_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\settings\sys_config.aspx.cs">
-      <DependentUpon>sys_config.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\settings\sys_config.aspx.designer.cs">
-      <DependentUpon>sys_config.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\settings\templet_file_edit.aspx.cs">
-      <DependentUpon>templet_file_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\settings\templet_file_edit.aspx.designer.cs">
-      <DependentUpon>templet_file_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\settings\templet_file_list.aspx.cs">
-      <DependentUpon>templet_file_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\settings\templet_file_list.aspx.designer.cs">
-      <DependentUpon>templet_file_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\settings\templet_list.aspx.cs">
-      <DependentUpon>templet_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\settings\templet_list.aspx.designer.cs">
-      <DependentUpon>templet_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\settings\url_rewrite_edit.aspx.cs">
-      <DependentUpon>url_rewrite_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\settings\url_rewrite_edit.aspx.designer.cs">
-      <DependentUpon>url_rewrite_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\settings\url_rewrite_list.aspx.cs">
-      <DependentUpon>url_rewrite_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\settings\url_rewrite_list.aspx.designer.cs">
-      <DependentUpon>url_rewrite_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\amount_log.aspx.cs">
-      <DependentUpon>amount_log.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\amount_log.aspx.designer.cs">
-      <DependentUpon>amount_log.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\group_edit.aspx.cs">
-      <DependentUpon>group_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\group_edit.aspx.designer.cs">
-      <DependentUpon>group_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\group_list.aspx.cs">
-      <DependentUpon>group_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\group_list.aspx.designer.cs">
-      <DependentUpon>group_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\mail_template_edit.aspx.cs">
-      <DependentUpon>mail_template_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\mail_template_edit.aspx.designer.cs">
-      <DependentUpon>mail_template_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\mail_template_list.aspx.cs">
-      <DependentUpon>mail_template_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\mail_template_list.aspx.designer.cs">
-      <DependentUpon>mail_template_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\message_edit.aspx.cs">
-      <DependentUpon>message_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\message_edit.aspx.designer.cs">
-      <DependentUpon>message_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\message_list.aspx.cs">
-      <DependentUpon>message_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\message_list.aspx.designer.cs">
-      <DependentUpon>message_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\oauth_app_edit.aspx.cs">
-      <DependentUpon>oauth_app_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\oauth_app_edit.aspx.designer.cs">
-      <DependentUpon>oauth_app_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\oauth_app_list.aspx.cs">
-      <DependentUpon>oauth_app_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\oauth_app_list.aspx.designer.cs">
-      <DependentUpon>oauth_app_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\point_log.aspx.cs">
-      <DependentUpon>point_log.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\point_log.aspx.designer.cs">
-      <DependentUpon>point_log.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\recharge_edit.aspx.cs">
-      <DependentUpon>recharge_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\recharge_edit.aspx.designer.cs">
-      <DependentUpon>recharge_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\recharge_list.aspx.cs">
-      <DependentUpon>recharge_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\recharge_list.aspx.designer.cs">
-      <DependentUpon>recharge_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\site_oauth_edit.aspx.cs">
-      <DependentUpon>site_oauth_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\site_oauth_edit.aspx.designer.cs">
-      <DependentUpon>site_oauth_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\site_oauth_list.aspx.cs">
-      <DependentUpon>site_oauth_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\site_oauth_list.aspx.designer.cs">
-      <DependentUpon>site_oauth_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\sms_template_edit.aspx.cs">
-      <DependentUpon>sms_template_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\sms_template_edit.aspx.designer.cs">
-      <DependentUpon>sms_template_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\sms_template_list.aspx.cs">
-      <DependentUpon>sms_template_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\sms_template_list.aspx.designer.cs">
-      <DependentUpon>sms_template_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\user_audit.aspx.cs">
-      <DependentUpon>user_audit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\user_audit.aspx.designer.cs">
-      <DependentUpon>user_audit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\user_config.aspx.cs">
-      <DependentUpon>user_config.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\user_config.aspx.designer.cs">
-      <DependentUpon>user_config.aspx</DependentUpon>
+    <Compile Include="admin\users\user_agreements.aspx.designer.cs">
+      <DependentUpon>user_agreements.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\users\user_edit.aspx.cs">
       <DependentUpon>user_edit.aspx</DependentUpon>
@@ -1367,19 +900,12 @@
     <Compile Include="admin\users\user_list.aspx.designer.cs">
       <DependentUpon>user_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\users\user_oauth.aspx.cs">
-      <DependentUpon>user_oauth.aspx</DependentUpon>
+    <Compile Include="admin\users\user_rechage.aspx.cs">
+      <DependentUpon>user_rechage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\users\user_oauth.aspx.designer.cs">
-      <DependentUpon>user_oauth.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\users\user_sms.aspx.cs">
-      <DependentUpon>user_sms.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\users\user_sms.aspx.designer.cs">
-      <DependentUpon>user_sms.aspx</DependentUpon>
+    <Compile Include="admin\users\user_rechage.aspx.designer.cs">
+      <DependentUpon>user_rechage.aspx</DependentUpon>
     </Compile>
     <Compile Include="api\oauth\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -1614,9 +1140,6 @@
     <Content Include="tools\submit_ajax.ashx" />
     <Content Include="tools\download.ashx" />
     <Content Include="tools\verify_code.ashx" />
-    <Content Include="templates\main\css\icon\iconfont.eot" />
-    <Content Include="templates\main\css\icon\iconfont.ttf" />
-    <Content Include="templates\main\css\icon\iconfont.woff" />
     <Content Include="mobile\dist\js\swiper.min.js.map" />
     <Content Include="mobile\sendSMS.ashx" />
     <None Include="Properties\PublishProfiles\tubugebi.pubxml" />

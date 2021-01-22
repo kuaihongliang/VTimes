@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user_list.aspx.cs" Inherits="DTcms.Web.admin.users.user_list" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pay_item_list.aspx.cs" Inherits="DTcms.Web.admin.users.pay_item_list" %>
 
 <!DOCTYPE html>
 

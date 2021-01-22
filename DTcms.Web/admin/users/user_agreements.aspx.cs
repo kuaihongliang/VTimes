@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace DTcms.Web.admin.users
 {
-    public partial class user_edit : System.Web.UI.Page
+    public partial class user_agreements : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
