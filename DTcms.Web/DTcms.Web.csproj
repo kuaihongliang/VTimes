@@ -1017,6 +1017,9 @@
     <Compile Include="admin\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\manager\get_qr_code.ashx.cs">
+      <DependentUpon>get_qr_code.ashx</DependentUpon>
+    </Compile>
     <Compile Include="admin\manager\manager_edit.aspx.cs">
       <DependentUpon>manager_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1599,6 +1602,7 @@
     <Content Include="xmlconfig\user.config" />
     <Content Include="xmlconfig\urls.config" />
     <Content Include="tools\upload_ajax.ashx" />
+    <Content Include="admin\manager\get_qr_code.ashx" />
     <None Include="editor\third-party\jquery-1.10.2.min.map" />
     <None Include="editor\third-party\video-js\font\vjs.eot" />
     <None Include="editor\third-party\video-js\font\vjs.ttf" />
@@ -1612,6 +1616,7 @@
     <Content Include="mobile\dist\js\swiper.min.js.map" />
     <Content Include="mobile\sendSMS.ashx" />
     <None Include="Properties\PublishProfiles\tubugebi.pubxml" />
+    <None Include="Properties\PublishProfiles\Vtimes.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,6 +12,7 @@
     <div>
     
     </div>
+        <asp:Label ID="lblOpenid" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

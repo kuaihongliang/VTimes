@@ -11,7 +11,13 @@ namespace DTcms.Web.admin.manager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+                {
+                    imgUrlQR.ImageUrl = "get_qr_code.ashx?id=" + Request.QueryString["id"];
+                }
+            }
         }
     }
 }

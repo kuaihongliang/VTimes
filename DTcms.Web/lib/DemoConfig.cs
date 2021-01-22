@@ -17,16 +17,16 @@ namespace WxPayAPI.lib
         */
 
         public string GetAppID(){
-            return "wx9511a139072c5d5e";
+            return "wxa7bb4da826782600";
         }
         public string GetMchID(){
-            return "1572054091";
+            return "";
         }
         public string GetKey(){
-            return "ev2uOWCc0F719BLguZUOz4LZNTXqtEHa";
+            return "";
         }
         public string GetAppSecret(){
-            return "b2c42cd7d2f06ca3877b2993a664216a";
+            return "3e11cf41247ab74f99da1586b46d5c2e";
         }
 
 

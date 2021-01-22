@@ -18,6 +18,17 @@
     <script type="text/javascript" src="../../scripts/artdialog/dialog-plus-min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/laymain.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/common.js"></script>
+    <script type="text/javascript" src="../../scripts/lhgdialog/lhgdialog.js?skin=idialog"></script>
+    <script type="text/javascript">
+        function bindWX(obj) {
+            var id = $(obj).parent().parent().find("input[type=hidden]").get(0).value;
+            $.dialog({
+                title: '绑定学员', width: 500, heght: 500,
+                content: 'url:manager/student_bind_qr.aspx?id=' + id,
+                lock: true
+            });
+        }
+    </script>
 </head>
 
 <body class="mainbody">
@@ -66,14 +77,14 @@
                         <tr>
                             <th width="5%">选择</th>
                             <th align="left">姓名</th>
-                            <th align="left" width="8%">联系电话</th>
-                            <th align="left" width="8%">学历</th>
-                            <th align="left" width="8%">性别</th>
-                            <th align="left" width="8%">民族</th>
-                            <th align="left" width="8%">籍贯</th>
-                            <th align="left" width="8%">年龄</th>
-                            <th align="left" width="8%">身份证号</th>
-                            <th align="left" width="8%">介绍人</th>
+                            <th align="left" width="9%">联系电话</th>
+                            <th align="left" width="9%">学历</th>
+                            <th align="left" width="9%">性别</th>
+                            <th align="left" width="9%">民族</th>
+                            <th align="left" width="9%">籍贯</th>
+                            <th align="left" width="9%">年龄</th>
+                            <th align="left" width="9%">身份证号</th>
+                            <th align="left" width="9%">介绍人</th>
                             <th width="190">操作</th>
                         </tr>
                 </HeaderTemplate>
@@ -95,7 +106,7 @@
                         <td align="center">
                             <a href="student_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("st_id")%>">修改信息</a>&nbsp;&nbsp;
                             <a href="#">添加课时</a>&nbsp;&nbsp;
-                            <a href="#">绑定微信</a>
+                            <a style="cursor: pointer;" href="javascript:;" onclick="bindWX(this)">绑定微信</a>
                         </td>
                     </tr>
                 </ItemTemplate>
