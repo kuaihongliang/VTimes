@@ -98,8 +98,7 @@ namespace DTcms.Web.admin.curriculum
                 //    j++;
                 //}
             }
-            else
-                if (d.Date.Month.Equals(intCurrentMonth))
+            else if (d.Date.Month.Equals(intCurrentMonth))
             {
                 title = d.Date.Month.ToString() + "月" + d.Date.Day.ToString() + "日";//鼠标移上时显示相应的月日
                                                                                     //IEnumerable<int> Days = from day in arrCurrentDays
@@ -118,7 +117,7 @@ namespace DTcms.Web.admin.curriculum
                 //    c.Controls.Add(new LiteralControl("<a href='#' onclick=javascript:OpenWin('ViewPlan.aspx?PlanDate=" + strDate + "'" + ",650,750,50,200) title='" + title + "'><font color='blue' size='3'>" + d.Date.Day + "<font><br/><div style='text-align:left'><font color='blue' size='2'>" + planTitle + "<font></div></a>"));
                 //}
                 //=====若当月的会议次数为N，当月天数为M 则循环执行M*N次=============================//
-                while (!arrCurrentDays[j].Equals(0)) //没有会议对应的值即为整型数组的默认值0
+                while (j<arrCurrentDays.Count) 
                 {
                     if (d.Date.Day.Equals(arrCurrentDays[j])) //判断当前日期的第几天是否与日期数组中的某一个相等
                     {
@@ -148,7 +147,6 @@ namespace DTcms.Web.admin.curriculum
                                    //    }
                                    //    j++;
                                    //}
-
             }
 
         }

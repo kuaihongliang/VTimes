@@ -343,7 +343,8 @@ namespace DTcms.DAL
             where.Append(" DATEPART(year,CurriculumDate)=" + Year);
             where.Append(" AND DATEPART(month,CurriculumDate)=" + Month);
             int count = GetRecordCount(where.ToString());
-            List<int> intArray = new List<int>(new int[count]); //设定一个月最多999次会议，当然也可以通过数据库记录动态赋值即下面的i值
+            if (count == 0) count = 1;
+            List<int> intArray = new List<int>(new int[count]); //通过数据库记录动态赋值即下面的i值
             title = new List<string>(new string[count]);
             //从数据库里选取符合要求的记录，将日期存入数组(即符合所选的当前年当前月所有的会议记录) 
             StringBuilder strSql = new StringBuilder();
@@ -356,7 +357,7 @@ namespace DTcms.DAL
             try
             {
                 DataTable dt = DbHelperSQL.Query(strSql.ToString()).Tables[0];
-                for(int i=0;i< count; i++)
+                for(int i=0;i< dt.Rows.Count; i++)
                 {
                     planName = dt.Rows[i]["CurriculumName"].ToString();
                     DateTime sdate = DateTime.Parse(dt.Rows[i]["CurriculumDate"].ToString());

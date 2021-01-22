@@ -67,7 +67,7 @@
         </dl>
        
         <dl>
-            <dt>授课老师：</dt>
+            <dt>授课教练：</dt>
             <dd><asp:HiddenField ID="hdfTeacherID" runat="server" />
                <asp:TextBox ID="txtTeacher" runat="server" CssClass="input normal" sucmsg=" "
                     minlength="" MaxLength="100"></asp:TextBox>
@@ -104,11 +104,11 @@
                     <HeaderTemplate>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
                             <tr>
-                                <th style="width: 10%" align="center">课程名称
+                                <th style="width: 20%" align="center">课程名称
                                 </th>
-                                <th style="width: 10%" align="center">课程时间
+                                <th style="width: 20%" align="center">课程时间
                                 </th>
-                                 <th style="width: 10%" align="center">授课老师
+                                 <th style="width: 20%" align="center">授课教练
                                 </th>
                                 <th align="center">备注
                                 </th>
