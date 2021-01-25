@@ -101,7 +101,10 @@ namespace DTcms.Web.mobile
 
                     Log.Info(this.GetType().ToString(), result.openid);
                     //使用result继续操作
-                    lblOpenid.Text = result.openid;
+                    //lblOpenid.Text = result.openid;
+                    string sql = "update S_Student_Info set student_openid='" + result.openid + "' where st_id=" + Request.QueryString["id"];
+                    DBUtility.DbHelperSQL.ExecuteSql(sql);
+                    lblOpenid.Text = "学员微信绑定成功！";
                 }
                 else
                 {
