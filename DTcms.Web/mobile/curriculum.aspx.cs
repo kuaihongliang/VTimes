@@ -7,21 +7,101 @@ using System.Web.UI.WebControls;
 using System.Data;
 using DTcms.Common;
 using DTcms.BLL;
+using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using Senparc.Weixin.Exceptions;
+using Senparc.Weixin;
+using Senparc.Weixin.MP.AdvancedAPIs;
+using Senparc.Weixin.MP.CommonAPIs;
 
 namespace DTcms.Web.mobile
 {
     public partial class curriculum : System.Web.UI.Page
     {
-        private List<int> arrCurrentDays;//, arrPreDays, arrNextDays;
+        protected string code;
+        static Dictionary<string, OAuthAccessTokenResult> OAuthCodeCollection = new Dictionary<string, OAuthAccessTokenResult>();
+        static object OAuthCodeCollectionLock = new object();
+        CommonApiTest ca = new CommonApiTest();
 
+        private DataTable arrCurrentDays;//, arrPreDays, arrNextDays;
         //三个整型数组存放相对月份写有plan的日期
         private int intCurrentMonth, intPreMonth, intNextMonth;
         private int intCurrentYear, intPreYear, intNextYear;
-        List<string> planName;//在日期下面显示有会议安排的标题
+        //List<string> planName;//在日期下面显示有会议安排的标题
         string planTitle = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                OAuthAccessTokenResult result = null;
+                if (!string.IsNullOrEmpty(Request.QueryString["code"]))
+                {
+                    string openId="";
+                    code = Request.QueryString["code"].ToString();
+                    try
+                    {
+                        //通过，用code换取access_token
+                        var isSecondRequest = false;
+                        lock (OAuthCodeCollectionLock)
+                        {
+                            isSecondRequest = OAuthCodeCollection.ContainsKey(code);
+                        }
+                        if (!isSecondRequest)
+                        {
+                            //第一次请求
+                            lock (OAuthCodeCollectionLock)
+                            {
+                                OAuthCodeCollection[code] = null;
+                            }
+                        }
+                        else
+                        {
+                            //第二次请求
+                            lock (OAuthCodeCollectionLock)
+                            {
+                                result = OAuthCodeCollection[code];
+                            }
+                        }
+                        try
+                        {
+                            var accessToken = AccessTokenContainer.GetAccessToken(ca._appId);
+                            try
+                            {
+                                result = result ?? OAuthApi.GetAccessToken(ca._appId, ca._appSecret,code);
+                                //txtComeDate.Text = result.errcode.ToString();
+                            }
+                            catch (Exception ex)
+                            {
+                                //txtComeDate.Text = ex.ToString();
+                                //return Content("OAuth AccessToken错误：" + ex.Message);
+                            }
+                            if (result != null)
+                            {
+                                lock (OAuthCodeCollectionLock)
+                                {
+                                    OAuthCodeCollection[code] = result;
+                                }
+                                openId = result != null ? result.openid : "";
+                                hdfOpenID.Value = openId;
+                            }
+                        }
+                        catch (Senparc.Weixin.Exceptions.ErrorJsonResultException ex)
+                        {
+                            if (ex.JsonResult.errcode == ReturnCode.不合法的oauth_code)
+                            {
+                                //code已经被使用过
+                                lock (OAuthCodeCollectionLock)
+                                {
+                                    result = OAuthCodeCollection[code];
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        //return Content("授权过程发生错误：" + ex.Message);
+                    }
+                }
+            }
         }
         protected void CalPlan_DayRender(object sender, DayRenderEventArgs e)
         {
@@ -49,16 +129,6 @@ namespace DTcms.Web.mobile
                     intCurrentMonth = 1;
                     intCurrentYear = intPreYear + 1;
                 }
-
-                //intPreMonth = d.Date.Month;
-                //if (d.Date.Month != DateTime.Now.Month)
-                //    intCurrentMonth = intPreMonth + 1;
-                //else
-                //    intCurrentMonth = DateTime.Now.Month;
-                //if (intCurrentMonth > 12)
-                //{
-                //    intCurrentMonth = 1;
-                //}
                 intNextMonth = intCurrentMonth + 1;
                 intNextYear = intCurrentYear;
                 if (intNextMonth > 12)
@@ -70,7 +140,7 @@ namespace DTcms.Web.mobile
                 //arrPreDays = getArrayDay(d.Date.Year, intPreMonth);
                 //得到当月有plan的日期数组
                 BLL.C_Curriculum bll = new C_Curriculum();
-                arrCurrentDays = bll.GetList(intCurrentYear, intCurrentMonth, out planName);
+                arrCurrentDays = bll.GetList(intCurrentYear, intCurrentMonth,hdfOpenID.Value);
                 //得到下个月有plan的日期数组
                 //arrNextDays = getArrayDay(d.Date.Year, intNextMonth);
             }
@@ -81,71 +151,47 @@ namespace DTcms.Web.mobile
 
             c.Controls.Clear();//绘制前先清除
             //打开新窗口传递参数.
-            c.Controls.Add(new LiteralControl("<a href='#' onclick=javascript:OpenWin('CurriculumEdit.aspx?PlanDate=" + strDate + "'" + ",650,750,50,200) title='" + title + "'>" + d.Date.Day + "</a>"));
+            c.Controls.Add(new LiteralControl("<font  size = '3' > " + d.Date.Day + " <font>"));
 
             int j = 0;
             int Rownum = 0;
             if (d.Date.Month.Equals(intPreMonth))
             {
                 c.Controls.Clear();//让上月日期不可见
-                //while (!arrPreDays[j].Equals(0))
-                //{
-                //    if (d.Date.Day.Equals(arrPreDays[j]))
-                //    {
-                //        //放置逻辑处理 
-                //    }
-                //    j++;
-                //}
             }
             else if (d.Date.Month.Equals(intCurrentMonth))
             {
                 title = d.Date.Month.ToString() + "月" + d.Date.Day.ToString() + "日";//鼠标移上时显示相应的月日
-                                                                                    //IEnumerable<int> Days = from day in arrCurrentDays
-                                                                                    //                        where day != 0 && d.Date.Day == day
-                                                                                    //                        select day;
-
-                //
-                //foreach (int dd in Days)
-                //{
-                //    Rownum++;
-                //    planTitle += "(" + Rownum.ToString() + ")" + planName[x] + "<br />";//如果能取到索引值可以使用下LINQ语句 像上面那样
-                //    c.Controls.Clear();
-                //    c.BorderWidth = 1;
-                //    c.BorderColor = System.Drawing.Color.Red;
-                //    c.BackColor = System.Drawing.Color.Pink;
-                //    c.Controls.Add(new LiteralControl("<a href='#' onclick=javascript:OpenWin('ViewPlan.aspx?PlanDate=" + strDate + "'" + ",650,750,50,200) title='" + title + "'><font color='blue' size='3'>" + d.Date.Day + "<font><br/><div style='text-align:left'><font color='blue' size='2'>" + planTitle + "<font></div></a>"));
-                //}
                 //=====若当月的会议次数为N，当月天数为M 则循环执行M*N次=============================//
-                while (j < arrCurrentDays.Count)
+                while (j < arrCurrentDays.Rows.Count)
                 {
-                    if (d.Date.Day.Equals(arrCurrentDays[j])) //判断当前日期的第几天是否与日期数组中的某一个相等
+                    if (d.Date.Day.Equals(DateTime.Parse(arrCurrentDays.Rows[j]["CurriculumDate"].ToString()).Day)) //判断当前日期的第几天是否与日期数组中的某一个相等
                     {
                         Rownum++;
-                        planTitle += "(" + Rownum.ToString() + ")" + planName[j] + "<br />";//标题索引与天的索引是一一对应的
+                        planTitle = "(" + Rownum.ToString() + ")" + arrCurrentDays.Rows[j]["CurriculumName"] + "<br />";//标题索引与天的索引是一一对应的
+                        if(Rownum==1)
                         c.Controls.Clear();
                         //当前月有会议安排的日期并设置相应的字体格式于样式
                         c.BorderWidth = 1;
                         c.BorderColor = System.Drawing.Color.Red;
                         c.BackColor = System.Drawing.Color.Pink;
-                        c.Controls.Add(new LiteralControl("<a href='#' onclick=javascript:OpenWin('CurriculumEdit.aspx?PlanDate=" + strDate + "'" + ",650,750,50,200) title='" + title + "'><font color='blue' size='3'>" + d.Date.Day + "<font><br/><div style='text-align:center'><font color='blue' size='2'>" + planTitle + "<font></div></a>"));
+                        string txt = "课程名称："+ arrCurrentDays.Rows[j]["CurriculumName"].ToString()+ "\r\n";
+                        txt += "课程时间："+ arrCurrentDays.Rows[j]["CurriculumDate"].ToString() + "\r\n";
+                        txt += "授课教练：" + arrCurrentDays.Rows[j]["Teacher"].ToString() + "\r\n";
+                        txt += "备注：" + arrCurrentDays.Rows[j]["CurriculumRemark"].ToString() + "\r\n";
+                        if (Rownum == 1)
+                            c.Controls.Add(new LiteralControl("<a href='#' onclick=javascript:SetLab('" + arrCurrentDays.Rows[j]["ID"].ToString() + "'" + ") title='" + title + "'><font color='blue' size='3'>" + d.Date.Day + "<font><br/><div style='text-align:center'><font color='blue' size='2'>" + planTitle + "<font></div></a><input type='hidden' id='" + arrCurrentDays.Rows[j]["ID"].ToString() + "' value='"+txt+"' />"));
+                        else
+                            c.Controls.Add(new LiteralControl("<a href='#' onclick=javascript:SetLab('" + arrCurrentDays.Rows[j]["ID"].ToString() + "'" + ") title='" + title + "'><div style='text-align:center'><font color='blue' size='2'>" + planTitle + "<font></div></a><input type='hidden' id='" + arrCurrentDays.Rows[j]["ID"].ToString() + "' value='" + txt + "' />"));
                     }
                     j++;
                 }
-
                 //每次循环后清空变量
                 planTitle = string.Empty;
             }
             else if (d.Date.Month.Equals(intNextMonth))
             {
                 c.Controls.Clear();//让下月日期不可见
-                                   //while (!arrNextDays[j].Equals(0))
-                                   //{
-                                   //    if (d.Date.Day.Equals(arrNextDays[j]))
-                                   //    {
-                                   //放置逻辑处理  
-                                   //    }
-                                   //    j++;
-                                   //}
             }
         }
     }

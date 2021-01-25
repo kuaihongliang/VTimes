@@ -8,6 +8,7 @@
     <title></title>
     <link href="../../css/global.css" type="text/css" rel="stylesheet"/>
     <link href="../../css/table.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../scripts/lhgdialog/lhgdialog.js?skin=idialog"></script>
     <script type="text/javascript">
         function Open(url) {
             window.open(url, 'newwindow', 'height=700,width=650,top=1,left=120,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=auto,status=no')
@@ -19,7 +20,13 @@
 
         function OpenWin(url, h, w, top, left) {
             window.open(url, "newwindow", "height=" + h + ", width=" + w + ", top=" + top + ", left=" + left + ", toolbar=no, menubar=no, scrollbars=yes, location=no, status=no");
+            //$.dialog({
+            //    title: '课程设置', width: w+'px', heght: h+'px',
+            //    content: url,
+            //    lock: true
+            //});
         }
+        
     </script>
 </head>
 <body class="mainbody">

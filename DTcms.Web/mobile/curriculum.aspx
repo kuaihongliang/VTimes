@@ -13,23 +13,27 @@
     <link href="../../css/global.css" type="text/css" rel="stylesheet"/>
     <link href="../../css/table.css" type="text/css" rel="stylesheet"/>
     <script type="text/javascript">
-        function Open(url) {
-            window.open(url, 'newwindow', 'height=700,width=650,top=1,left=120,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=auto,status=no')
+        function SetLab(hid) {
+            var aa = document.getElementById(hid).value;
+            document.getElementById('labCurriculumName').value = aa;
+            autoLab();
         }
-
-        function Open2(url) {
-            window.open(url, 'newwindow', 'height=500,width=350,top=60,left=120,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,status=no')
-        }
-
-        function OpenWin(url, h, w, top, left) {
-            window.open(url, "newwindow", "height=" + h + ", width=" + w + ", top=" + top + ", left=" + left + ", toolbar=no, menubar=no, scrollbars=yes, location=no, status=no");
+        function autoLab() {
+            $('textarea').each(function () {
+                this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;padding:0;border:0;background-color:White;');
+            }).on('input', function () {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+                this.style.width = '100%';
+            });
         }
     </script>
     <title>V时代俱乐部课程</title>
 </head>
 <body class="mainbody">
     <form id="form1" runat="server">
-  <div>
+        <asp:HiddenField ID="hdfOpenID" runat="server" />
+  <div style="text-align:center;padding:0;background-color:White;">
     <asp:Calendar ID="CalPlan" runat="server"  BorderColor="#3366CC"
             CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="20px" 
             ForeColor="#708090" Height="100%" Width="100%" OnDayRender="CalPlan_DayRender" BorderWidth="1px" Font-Bold="True" NextMonthText="下月" PrevMonthText="上月" ShowGridLines="True" Title="会议日程">
@@ -42,11 +46,8 @@
             <DayHeaderStyle BackColor="#FFF5EE" Font-Bold="True" ForeColor="#336666" Height="50px" Font-Size="Large" />
             <TitleStyle BackColor="#FFF5EE" BorderColor="White" Font-Bold="True" BorderWidth="1px" Font-Size="Larger" ForeColor="#696969" Height="30px" />
         </asp:Calendar>
+      <textarea id="labCurriculumName"  style="overflow:hidden; resize:none;width:100%;border:0;background-color:White; "  readonly="readonly"></textarea>
     </div>
-        <div>
-            <asp:TextBox ID="txt" runat="server"></asp:TextBox>
-
-        </div>
     </form>
 </body>
 

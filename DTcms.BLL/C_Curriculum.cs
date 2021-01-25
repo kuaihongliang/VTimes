@@ -146,6 +146,14 @@ namespace DTcms.BLL
         {
             return dal.GetList(Year, Month, out title);
         }
+        public DataTable GetList(int Year, int Month)
+        {
+            return dal.GetList(Year, Month);
+        }
+        public DataTable GetList(int Year, int Month,string openid)
+        {
+            return dal.GetList(Year, Month,openid);
+        }
         #endregion  ExtensionMethod
     }
 }
