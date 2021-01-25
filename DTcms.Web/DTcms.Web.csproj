@@ -464,6 +464,7 @@
     <Content Include="mobile\baoming.aspx" />
     <Content Include="mobile\comment_list.aspx" />
     <Content Include="mobile\comment_reply.aspx" />
+    <Content Include="mobile\curriculum.aspx" />
     <Content Include="mobile\default.aspx" />
     <Content Include="mobile\dist\css\swiper.css" />
     <Content Include="mobile\dist\css\swiper.min.css" />
@@ -995,6 +996,13 @@
     </Compile>
     <Compile Include="mobile\comment_reply.aspx.designer.cs">
       <DependentUpon>comment_reply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mobile\curriculum.aspx.cs">
+      <DependentUpon>curriculum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mobile\curriculum.aspx.designer.cs">
+      <DependentUpon>curriculum.aspx</DependentUpon>
     </Compile>
     <Compile Include="mobile\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

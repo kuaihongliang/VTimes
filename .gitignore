@@ -240,3 +240,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/DTcms.Web/mobile/js/calendar.js
+/DTcms.Web/mobile/style/calendar.css
+/DTcms.Web/mobile/HtmlPage1.html
