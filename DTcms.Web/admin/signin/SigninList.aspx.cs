@@ -125,7 +125,7 @@ namespace DTcms.Web.admin.signin
                     if (d.Date.Day.Equals(DateTime.Parse(arrCurrentDays.Rows[j]["CurriculumDate"].ToString()).Day)) //判断当前日期的第几天是否与日期数组中的某一个相等
                     {
                         Rownum++;
-                        planTitle += "(" + Rownum.ToString() + ")" + arrCurrentDays.Rows[j]["CurriculumName"] + "<br />";//标题索引与天的索引是一一对应的
+                        planTitle = "(" + Rownum.ToString() + ")" + arrCurrentDays.Rows[j]["CurriculumName"] + "<br />";//标题索引与天的索引是一一对应的
                         if (Rownum == 1)
                             c.Controls.Clear();
                         //当前月有会议安排的日期并设置相应的字体格式于样式
