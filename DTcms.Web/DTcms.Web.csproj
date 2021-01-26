@@ -122,6 +122,7 @@
     <Content Include="admin\manager\manager_pwd.aspx" />
     <Content Include="admin\manager\role_edit.aspx" />
     <Content Include="admin\manager\role_list.aspx" />
+    <Content Include="admin\manager\student_add_class.aspx" />
     <Content Include="admin\manager\student_bind_qr.aspx" />
     <Content Include="admin\manager\student_edit.aspx" />
     <Content Include="admin\manager\student_list.aspx" />
@@ -871,6 +872,13 @@
     </Compile>
     <Compile Include="admin\manager\role_list.aspx.designer.cs">
       <DependentUpon>role_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\manager\student_add_class.aspx.cs">
+      <DependentUpon>student_add_class.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\manager\student_add_class.aspx.designer.cs">
+      <DependentUpon>student_add_class.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\manager\student_bind_qr.aspx.cs">
       <DependentUpon>student_bind_qr.aspx</DependentUpon>

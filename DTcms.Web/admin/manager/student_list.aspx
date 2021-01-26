@@ -20,11 +20,31 @@
     <script type="text/javascript" charset="utf-8" src="../js/common.js"></script>
     <script type="text/javascript" src="../../scripts/lhgdialog/lhgdialog.js?skin=idialog"></script>
     <script type="text/javascript">
+        $(function () {
+            //图片延迟加载
+            $(".pic img").lazyload({ effect: "fadeIn" });
+            //点击图片链接
+            $(".pic img").click(function () {
+                var linkUrl = $(this).parent().parent().find(".foot a").attr("href");
+                if (linkUrl != "") {
+                    location.href = linkUrl; //跳转到修改页面
+                }
+            });
+        });
+
         function bindWX(obj) {
             var id = $(obj).parent().parent().find("input[type=hidden]").get(0).value;
             $.dialog({
                 title: '绑定学员', width: 500, heght: 500,
                 content: 'url:manager/student_bind_qr.aspx?id=' + id,
+                lock: true
+            });
+        }
+        function studentAddClass(obj) {
+            var id = $(obj).parent().parent().find("input[type=hidden]").get(0).value;
+            $.dialog({
+                title: '添加课时', width: 800, heght: 600,
+                content: 'url:manager/student_add_class.aspx?id=' + id,
                 lock: true
             });
         }
@@ -105,9 +125,9 @@
                         <td><%#Eval("st_introducer")%></td>
                         <td align="center">
                             <a href="student_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("st_id")%>">修改信息</a>&nbsp;&nbsp;
-                            <a href="#">添加课时</a>&nbsp;&nbsp;
-                            <a href='student_bind_qr.aspx?id=<%#Eval("st_id") %>' target="_blank">绑定微信</a>
-                            <%--<a style="cursor: pointer;" href="javascript:;" onclick="bindWX(this)">绑定微信</a>--%>
+                            <a href="javascript:;" onclick="studentAddClass(this);">添加课时</a>&nbsp;&nbsp;
+                            <%--<a href='student_bind_qr.aspx?id=<%#Eval("st_id") %>' target="_blank">绑定微信</a>--%>
+                            <a href="javascript:;" onclick="bindWX(this)">绑定微信</a>
                         </td>
                     </tr>
                 </ItemTemplate>
