@@ -17,6 +17,53 @@
     <script type="text/javascript" src="../../scripts/artdialog/dialog-plus-min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/laymain.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //图片延迟加载
+            $(".pic img").lazyload({ effect: "fadeIn" });
+            //点击图片链接
+            $(".pic img").click(function () {
+                var linkUrl = $(this).parent().parent().find(".foot a").attr("href");
+                if (linkUrl != "") {
+                    location.href = linkUrl; //跳转到修改页面
+                }
+            });
+        });
+
+        function userRecharge(obj) {
+            var id = $(obj).parent().parent().find("input[type=hidden]").get(0).value;
+            $.dialog({
+                title: '充值', width: 800, heght: 600,
+                content: 'url:users/user_recharge.aspx?id=' + id,
+                lock: true
+            });
+        }
+        function userCost(obj) {
+            var id = $(obj).parent().parent().find("input[type=hidden]").get(0).value;
+            $.dialog({
+                title: '消费', width: 800, heght: 600,
+                content: 'url:users/user_cost.aspx?id=' + id,
+                lock: true
+            });
+        }
+
+        function userRechargeRecord(obj) {
+            var id = $(obj).parent().parent().find("input[type=hidden]").get(0).value;
+            $.dialog({
+                title: '充值记录', width: 800, heght: 600,
+                content: 'url:users/user_recharge_record.aspx?id=' + id,
+                lock: true
+            });
+        }
+        function userCostRecord(obj) {
+            var id = $(obj).parent().parent().find("input[type=hidden]").get(0).value;
+            $.dialog({
+                title: '消费记录', width: 800, heght: 600,
+                content: 'url:users/user_cost_record.aspx?id=' + id,
+                lock: true
+            });
+        }
+    </script>
 </head>
 
 <body class="mainbody">
@@ -59,14 +106,14 @@
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
                         <tr>
                             <th width="8%">选择</th>
-                            <th align="left">会员姓名</th>
-                            <th align="left" width="12%">会员卡号</th>
-                            <th align="left" width="12%">性别</th>
-                            <th align="left" width="12%">联系电话</th>
-                            <th align="left" width="16%">添加时间</th>
-                            <th align="left" width="16%">最近一次充值时间</th>
-                            <th align="left" width="16%">最近一次消费时间</th>
-                            <th width="8%">操作</th>
+                            <th align="left" width="10%">会员姓名</th>
+                            <th align="left" width="10%">会员卡号</th>
+                            <th align="left" width="5%">性别</th>
+                            <th align="left" width="10%">联系电话</th>
+                            <th align="left" width="12%">添加时间</th>
+                            <th align="left" width="12%">最近一次充值时间</th>
+                            <th align="left" width="12%">最近一次消费时间</th>
+                            <th>操作</th>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -83,7 +130,7 @@
                         <td><%# Eval("last_pay_time") %></td>
                         <td><%# Eval("last_rechage_time") %></td>
                         <td align="center">
-                            <a href="#">修改信息</a>&nbsp;&nbsp;<a href="#">消费记录</a>&nbsp;&nbsp;<a href="#">充值记录</a>
+                            <a href="user_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("user_id")%>">修改会员信息</a>&nbsp;&nbsp;<a href="#">消费记录</a>&nbsp;&nbsp;<a href="#">充值记录</a>
                             <br />
                             <a href="#">充值</a>&nbsp;&nbsp;<a href="#">消费</a>
                         </td>

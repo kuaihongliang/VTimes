@@ -11,7 +11,7 @@ namespace DTcms.Web.admin.users
 {
 
 
-    public partial class user_agreements
+    public partial class user_recharge
     {
 
         /// <summary>

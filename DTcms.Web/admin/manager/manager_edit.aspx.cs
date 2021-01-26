@@ -33,7 +33,6 @@ namespace DTcms.Web.admin.manager
             }
             if (!Page.IsPostBack)
             {
-                BindDLL();
                 ChkAdminLevel("manager_list", DTEnums.ActionEnum.View.ToString()); //检查权限
                 Model.manager model = GetAdminInfo(); //取得管理员信息
                 RoleBind(ddlRoleId, model.role_type);
@@ -95,7 +94,6 @@ namespace DTcms.Web.admin.manager
             txtRealName.Text = model.real_name;
             txtTelephone.Text = model.telephone;
             txtEmail.Text = model.email;
-            ddlTeam.SelectedValue = model.fk_team_id.ToString();
         }
         #endregion
 
@@ -137,7 +135,6 @@ namespace DTcms.Web.admin.manager
             model.telephone = txtTelephone.Text.Trim();
             model.email = txtEmail.Text.Trim();
             model.add_time = DateTime.Now;
-            model.fk_team_id = int.Parse(ddlTeam.SelectedValue);
 
             if (bll.Add(model) > 0)
             {
@@ -183,7 +180,6 @@ namespace DTcms.Web.admin.manager
             model.real_name = txtRealName.Text.Trim();
             model.telephone = txtTelephone.Text.Trim();
             model.email = txtEmail.Text.Trim();
-            model.fk_team_id = int.Parse(ddlTeam.SelectedValue);
 
             if (bll.Update(model))
             {
@@ -219,17 +215,7 @@ namespace DTcms.Web.admin.manager
                 JscriptMsg("添加管理员信息成功！", "manager_list.aspx");
             }
         }
-
-        private void BindDLL()
-        {
-            string sql = "select * from action_team where 1=1";
-            DataTable dt = DBUtility.DbHelperSQL.Query(sql).Tables[0];
-            ddlTeam.DataSource = dt;
-            ddlTeam.DataTextField = "team_name";
-            ddlTeam.DataValueField = "id";
-            ddlTeam.DataBind();
-            ddlTeam.Items.Insert(0, new ListItem("请选择", "-1"));
-        }
+        
 
     }
 }

@@ -121,15 +121,6 @@
                 <dd>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="input normal"></asp:TextBox></dd>
             </dl>
-            <dl>
-                <dt>所属队伍</dt>
-                <dd>
-                    <div class="rule-single-select">
-                        <asp:DropDownList ID="ddlTeam" runat="server">
-                        </asp:DropDownList>
-                    </div>
-                </dd>
-            </dl>
 
         </div>
         <!--/内容-->

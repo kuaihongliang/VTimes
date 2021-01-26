@@ -152,10 +152,13 @@
     <Content Include="admin\skin\layout.css" />
     <Content Include="admin\users\pay_item_edit.aspx" />
     <Content Include="admin\users\pay_item_list.aspx" />
-    <Content Include="admin\users\user_agreements.aspx" />
+    <Content Include="admin\users\user_cost.aspx" />
+    <Content Include="admin\users\user_cost_record.aspx" />
     <Content Include="admin\users\user_edit.aspx" />
     <Content Include="admin\users\user_list.aspx" />
     <Content Include="admin\users\user_rechage.aspx" />
+    <Content Include="admin\users\user_recharge.aspx" />
+    <Content Include="admin\users\user_recharge_record.aspx" />
     <Content Include="api\oauth\index.aspx" />
     <Content Include="api\oauth\result_json.aspx" />
     <Content Include="api\oauth\return_url.aspx" />
@@ -989,12 +992,19 @@
     <Compile Include="admin\users\pay_item_list.aspx.designer.cs">
       <DependentUpon>pay_item_list.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\users\user_agreements.aspx.cs">
-      <DependentUpon>user_agreements.aspx</DependentUpon>
+    <Compile Include="admin\users\user_cost.aspx.cs">
+      <DependentUpon>user_cost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\users\user_agreements.aspx.designer.cs">
-      <DependentUpon>user_agreements.aspx</DependentUpon>
+    <Compile Include="admin\users\user_cost.aspx.designer.cs">
+      <DependentUpon>user_cost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\users\user_cost_record.aspx.cs">
+      <DependentUpon>user_cost_record.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\users\user_cost_record.aspx.designer.cs">
+      <DependentUpon>user_cost_record.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\users\user_edit.aspx.cs">
       <DependentUpon>user_edit.aspx</DependentUpon>
@@ -1016,6 +1026,20 @@
     </Compile>
     <Compile Include="admin\users\user_rechage.aspx.designer.cs">
       <DependentUpon>user_rechage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\users\user_recharge.aspx.cs">
+      <DependentUpon>user_recharge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\users\user_recharge.aspx.designer.cs">
+      <DependentUpon>user_recharge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\users\user_recharge_record.aspx.cs">
+      <DependentUpon>user_recharge_record.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\users\user_recharge_record.aspx.designer.cs">
+      <DependentUpon>user_recharge_record.aspx</DependentUpon>
     </Compile>
     <Compile Include="api\oauth\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

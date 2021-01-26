@@ -26,7 +26,7 @@ namespace DTcms.Web.admin.users
             {
                 ChkAdminLevel("user_list", DTEnums.ActionEnum.View.ToString()); //检查权限
                 Model.manager model = GetAdminInfo(); //取得当前管理员信息
-                RptBind("role_type>=" + model.role_type + CombSqlTxt(keywords), "add_time asc,id desc");
+                RptBind(" 1=1 " + CombSqlTxt(keywords), "user_name asc");
             }
         }
 
@@ -35,13 +35,13 @@ namespace DTcms.Web.admin.users
         {
             this.page = DTRequest.GetQueryInt("page", 1);
             txtKeywords.Text = this.keywords;
-            BLL.manager bll = new BLL.manager();
+            BLL.U_User_Info bll = new BLL.U_User_Info();
             this.rptList.DataSource = bll.GetList(this.pageSize, this.page, _strWhere, _orderby, out this.totalCount);
             this.rptList.DataBind();
 
             //绑定页码
             txtPageNum.Text = this.pageSize.ToString();
-            string pageUrl = Utils.CombUrlTxt("manager_list.aspx", "keywords={0}&page={1}", this.keywords, "__id__");
+            string pageUrl = Utils.CombUrlTxt("user_list.aspx", "keywords={0}&page={1}", this.keywords, "__id__");
             PageContent.InnerHtml = Utils.OutPageList(this.pageSize, this.page, this.totalCount, pageUrl, 8);
         }
         #endregion
@@ -53,7 +53,7 @@ namespace DTcms.Web.admin.users
             _keywords = _keywords.Replace("'", "");
             if (!string.IsNullOrEmpty(_keywords))
             {
-                strTemp.Append(" and (user_name like  '%" + _keywords + "%' or real_name like '%" + _keywords + "%' or email like '%" + _keywords + "%')");
+                strTemp.Append(" and (user_name like  '%" + _keywords + "%' or user_cardnum like '%" + _keywords + "%' or user_telphone like '%" + _keywords + "%')");
             }
 
             return strTemp.ToString();
@@ -64,7 +64,7 @@ namespace DTcms.Web.admin.users
         private int GetPageSize(int _default_size)
         {
             int _pagesize;
-            if (int.TryParse(Utils.GetCookie("manager_page_size", "DTcmsPage"), out _pagesize))
+            if (int.TryParse(Utils.GetCookie("user_page_size", "DTcmsPage"), out _pagesize))
             {
                 if (_pagesize > 0)
                 {
@@ -78,7 +78,7 @@ namespace DTcms.Web.admin.users
         //关健字查询
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            Response.Redirect(Utils.CombUrlTxt("manager_list.aspx", "keywords={0}", txtKeywords.Text));
+            Response.Redirect(Utils.CombUrlTxt("user_list.aspx", "keywords={0}", txtKeywords.Text));
         }
 
         //设置分页数量
@@ -89,19 +89,19 @@ namespace DTcms.Web.admin.users
             {
                 if (_pagesize > 0)
                 {
-                    Utils.WriteCookie("manager_page_size", "DTcmsPage", _pagesize.ToString(), 14400);
+                    Utils.WriteCookie("user_page_size", "DTcmsPage", _pagesize.ToString(), 14400);
                 }
             }
-            Response.Redirect(Utils.CombUrlTxt("manager_list.aspx", "keywords={0}", this.keywords));
+            Response.Redirect(Utils.CombUrlTxt("user_list.aspx", "keywords={0}", this.keywords));
         }
 
         //批量删除
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            ChkAdminLevel("manager_list", DTEnums.ActionEnum.Delete.ToString()); //检查权限
+            ChkAdminLevel("user_list", DTEnums.ActionEnum.Delete.ToString()); //检查权限
             int sucCount = 0;
             int errorCount = 0;
-            BLL.manager bll = new BLL.manager();
+            BLL.U_User_Info bll = new BLL.U_User_Info();
             for (int i = 0; i < rptList.Items.Count; i++)
             {
                 int id = Convert.ToInt32(((HiddenField)rptList.Items[i].FindControl("hidId")).Value);
@@ -118,8 +118,8 @@ namespace DTcms.Web.admin.users
                     }
                 }
             }
-            AddAdminLog(DTEnums.ActionEnum.Delete.ToString(), "删除管理员" + sucCount + "条，失败" + errorCount + "条"); //记录日志
-            JscriptMsg("删除成功" + sucCount + "条，失败" + errorCount + "条！", Utils.CombUrlTxt("manager_list.aspx", "keywords={0}", this.keywords));
+            AddAdminLog(DTEnums.ActionEnum.Delete.ToString(), "删除会员" + sucCount + "条，失败" + errorCount + "条"); //记录日志
+            JscriptMsg("删除成功" + sucCount + "条，失败" + errorCount + "条！", Utils.CombUrlTxt("user_list.aspx", "keywords={0}", this.keywords));
         }
 
     }
