@@ -146,9 +146,9 @@ namespace DTcms.BLL
         {
             return dal.GetList(Year, Month, out title);
         }
-        public DataTable GetList(int Year, int Month)
+        public DataTable GetList(int Year, int Month, StringBuilder where)
         {
-            return dal.GetList(Year, Month);
+            return dal.GetList(Year, Month,where);
         }
         public DataTable GetList(int Year, int Month,string openid)
         {

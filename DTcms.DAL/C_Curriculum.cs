@@ -460,6 +460,34 @@ namespace DTcms.DAL
             }
 
         }
+        /// <summary>
+        /// 按年、月、openid获取数据列表
+        /// </summary>
+        /// <param name="Year"></param>
+        /// <param name="Month"></param>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public DataTable GetList(int Year, int Month, StringBuilder where)
+        {
+            //从数据库里选取符合要求的记录，将日期存入数组(即符合所选的当前年当前月所有的会议记录) 
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(" SELECT * ");
+            strSql.Append(" FROM C_Curriculum ");
+            strSql.Append(" WHERE DATEPART(year,CurriculumDate)=" + Year);
+            strSql.Append(" AND DATEPART(month,CurriculumDate)=" + Month);
+            strSql.Append(" AND "+where.ToString());
+
+            try
+            {
+                DataTable dt = DbHelperSQL.Query(strSql.ToString()).Tables[0];
+                return dt;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         #endregion  ExtensionMethod
     }
 }
