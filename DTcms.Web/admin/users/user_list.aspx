@@ -17,6 +17,7 @@
     <script type="text/javascript" src="../../scripts/artdialog/dialog-plus-min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/laymain.js"></script>
     <script type="text/javascript" charset="utf-8" src="../js/common.js"></script>
+    <script type="text/javascript" src="../../scripts/lhgdialog/lhgdialog.js?skin=idialog"></script>
     <script type="text/javascript">
         $(function () {
             //图片延迟加载
@@ -132,12 +133,12 @@
                         <td align="center">
                             <a href="user_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("user_id")%>">修改会员信息</a>&nbsp;&nbsp;<a href="#">消费记录</a>&nbsp;&nbsp;<a href="#">充值记录</a>
                             <br />
-                            <a href="#">充值</a>&nbsp;&nbsp;<a href="#">消费</a>
+                            <a href="javascript:;" onclick="userRecharge(this)">充值</a>&nbsp;&nbsp;<a href="javascript:;" onclick="userCost(this)">消费</a>
                         </td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <%#rptList.Items.Count == 0 ? "<tr><td align=\"center\" colspan=\"8\">暂无记录</td></tr>" : ""%>
+                    <%#rptList.Items.Count == 0 ? "<tr><td align=\"center\" colspan=\"9\">暂无记录</td></tr>" : ""%>
   </table>
                 </FooterTemplate>
             </asp:Repeater>
