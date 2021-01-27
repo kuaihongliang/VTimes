@@ -12,6 +12,7 @@ using Senparc.Weixin.Exceptions;
 using Senparc.Weixin;
 using Senparc.Weixin.MP.AdvancedAPIs;
 using Senparc.Weixin.MP.CommonAPIs;
+using WxPayAPI;
 
 namespace DTcms.Web.mobile
 {
@@ -100,6 +101,13 @@ namespace DTcms.Web.mobile
                     {
                         //return Content("授权过程发生错误：" + ex.Message);
                     }
+                }
+                else
+                {
+                    
+                    string _str = "http://" + Request.Url.Host + "/mobile/curriculum.aspx" ;
+                    string url = OAuthApi.GetAuthorizeUrl(WxPayConfig.GetConfig().GetAppID(), _str, "state", Senparc.Weixin.MP.OAuthScope.snsapi_userinfo);
+                    Response.Redirect(url);
                 }
             }
         }
