@@ -11,8 +11,8 @@ namespace DTcms.Web
 {
     public partial class CommonApiTest
     {
-        public string _appId = "wx9511a139072c5d5e"; 
-        public string _appSecret = "b2c42cd7d2f06ca3877b2993a664216a";
+        public string _appId = "wxa7bb4da826782600"; 
+        public string _appSecret = "3e11cf41247ab74f99da1586b46d5c2e";
 
         public CommonApiTest()
         {
